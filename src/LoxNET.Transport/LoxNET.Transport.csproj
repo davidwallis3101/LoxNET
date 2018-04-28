@@ -4,5 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="EventFlow" Version="0.56.3328"/>
+    <PackageReference Include="EventFlow.Autofac" Version="0.56.3328"/>
+    <PackageReference Include="EventFlow.RabbitMQ" Version="0.56.3328"/>
   </ItemGroup>
 </Project>

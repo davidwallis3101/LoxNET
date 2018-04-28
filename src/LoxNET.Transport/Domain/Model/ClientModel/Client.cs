@@ -28,18 +28,14 @@ namespace LoxNET.Transport.Domain.Model.ClientModel
 {
     public class Client : Entity<ClientId>
     {
-        public Endpoint Endpoint { get; }
+        public Endpoint Endpoint { get; set; }
 
-        public Credentials Credentials { get; }
+        public Credentials Credentials { get; set; }
 
         public Client(
-            ClientId id,
-            Endpoint endpoint,
-            Credentials credentials)
+            ClientId id)
             : base(id)
         {
-            Endpoint = endpoint;
-            Credentials = credentials;
         }
 
     }

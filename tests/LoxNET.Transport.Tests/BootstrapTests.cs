@@ -68,17 +68,13 @@ namespace Tests
         public Task CreateClientAggregateAsync()
         {
 
-            Client client = new Client(
-                ClientId.New,
-                new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
-                new Credentials("Web", "Web")
-            );
+            Client client = new Client(ClientId.New);
 
             return UpdateAsync<ClientAggregate, ClientId>(
                 client.Id, 
                 a => a.Initialize(
-                    client.Endpoint,
-                    client.Credentials
+                    new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
+                    new Credentials("Web", "Web")
                 )
             );
         }

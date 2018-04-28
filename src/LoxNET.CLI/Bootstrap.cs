@@ -12,6 +12,8 @@ using LoxNET.Transport.Domain.Model.ClientModel;
 using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 using EventFlow.Extensions;
 using EventFlow.Logs;
+using EventFlow.RabbitMQ;
+using EventFlow.RabbitMQ.Extensions;
 
 namespace LoxNET.CLI
 {
@@ -23,9 +25,13 @@ namespace LoxNET.CLI
 
         public Bootstrap()
         {
+
+            var mquri = new Uri("amqp://localhost");
+
            _resolver = EventFlowOptions.New
                 .ConfigureTransportDomain()
                 .UseConsoleLog()
+                .PublishToRabbitMq(RabbitMqConfiguration.With(mquri))
                 .CreateResolver();
 
             _aggregateStore = _resolver
@@ -66,16 +72,16 @@ namespace LoxNET.CLI
         {
 
             Client client = new Client(
-                ClientId.New,
-                new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
-                new Credentials("Web", "Web")
-            );
+                ClientId.New);
+            //    new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
+            //    new Credentials("Web", "Web")
+            //);
 
             return UpdateAsync<ClientAggregate, ClientId>(
                 client.Id, 
                 a => a.Initialize(
-                    client.Endpoint,
-                    client.Credentials
+                    new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
+                    new Credentials("Web", "Web")
                 )
             );
         }
