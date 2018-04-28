@@ -10,6 +10,6 @@
     <PackageReference Include="EventFlow" Version="0.56.3328"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\LoxNet.Transport\LoxNet.Transport.csproj"/>
+    <ProjectReference Include="..\..\src\LoxNET.Transport\LoxNET.Transport.csproj"/>
   </ItemGroup>
 </Project>

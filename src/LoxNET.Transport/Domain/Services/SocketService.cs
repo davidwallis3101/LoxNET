@@ -5,11 +5,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Net.WebSockets;
 using EventFlow;
-using LoxNet.Transport.Domain.Model.ConnectionModel;
-using LoxNet.Transport.Domain.Model.ConnectionModel.Commands;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ConnectionModel;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Commands;
+using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Services
+namespace LoxNET.Transport.Domain.Services
 {
     public class SocketService : ISocketService, IDisposable
     {

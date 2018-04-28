@@ -22,10 +22,10 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System.Collections.Generic;
-using LoxNet.Transport.Domain.Model.ClientModel;
+using LoxNET.Transport.Domain.Model.ClientModel;
 using EventFlow.Queries;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel.Queries
+namespace LoxNET.Transport.Domain.Model.ClientModel.Queries
 {
 
 }

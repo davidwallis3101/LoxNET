@@ -25,13 +25,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Configuration;
-using LoxNet.Transport.Domain.Model.ClientModel.Commands;
-using LoxNet.Transport.Domain.Services;
+using LoxNET.Transport.Domain.Model.ClientModel.Commands;
+using LoxNET.Transport.Domain.Services;
 using EventFlow.Exceptions;
 using EventFlow.Jobs;
 using EventFlow.Queries;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel.Jobs
+namespace LoxNET.Transport.Domain.Model.ClientModel.Jobs
 {
     public class ClientConnectJob : IJob
     {

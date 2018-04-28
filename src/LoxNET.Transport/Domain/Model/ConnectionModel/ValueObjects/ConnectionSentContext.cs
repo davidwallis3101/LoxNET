@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using EventFlow.Core;
 using EventFlow.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects
 {
     public class ConnectionSentContext : ValueObject
     {

@@ -22,9 +22,9 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Entities;
-using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
     public class Client : Entity<ClientId>
     {

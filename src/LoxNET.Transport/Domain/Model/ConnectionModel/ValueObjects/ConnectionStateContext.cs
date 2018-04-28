@@ -25,9 +25,9 @@ using System;
 using System.Collections.Generic;
 using EventFlow.Core;
 using EventFlow.ValueObjects;
-using LoxNet.Transport.Domain.Model.ConnectionModel.Enums;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Enums;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects
 {
     public class ConnectionStateContext : ValueObject
     {

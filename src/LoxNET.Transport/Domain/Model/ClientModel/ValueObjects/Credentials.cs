@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using EventFlow.Core;
 using EventFlow.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel.ValueObjects
+namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
 {
     public class Credentials : ValueObject
     {

@@ -23,10 +23,10 @@
 
 using EventFlow.Aggregates;
 using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ClientModel.Events;
-using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ClientModel.Events;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
     public class ClientAggregate : AggregateRoot<ClientAggregate, ClientId>
     {

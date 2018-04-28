@@ -23,9 +23,9 @@
 
 using EventFlow.Aggregates;
 using EventFlow.EventStores;
-using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel.Events
+namespace LoxNET.Transport.Domain.Model.ClientModel.Events
 {
     [EventVersion("ClientConnected", 1)]
     public class ClientConnectedEvent : AggregateEvent<ClientAggregate, ClientId>

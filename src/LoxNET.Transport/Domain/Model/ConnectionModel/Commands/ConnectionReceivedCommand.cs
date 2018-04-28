@@ -24,9 +24,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Commands;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.Commands
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Commands
 {
     public class ConnectionReceivedCommand : Command<ConnectionAggregate, ConnectionId>
     {

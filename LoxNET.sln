@@ -5,13 +5,13 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3A3ED3EE-4685-448C-86CC-51A35CD2400D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.Transport", "src\LoxNet.Transport\LoxNet.Transport.csproj", "{CCABD149-0B3E-46C9-B26E-76018A08D8A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.Transport", "src\LoxNET.Transport\LoxNET.Transport.csproj", "{CCABD149-0B3E-46C9-B26E-76018A08D8A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{507FFE44-5D24-48B9-9ECC-868075CC625D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.Transport.Tests", "tests\LoxNet.Transport.Tests\LoxNet.Transport.Tests.csproj", "{197A564A-81DE-4CAF-9E42-FD72317576DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.Transport.Tests", "tests\LoxNET.Transport.Tests\LoxNET.Transport.Tests.csproj", "{197A564A-81DE-4CAF-9E42-FD72317576DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.CLI", "src\LoxNet.CLI\LoxNet.CLI.csproj", "{1475EE65-B71D-4517-8AA5-8B8AA43DB741}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoxNET.CLI", "src\LoxNET.CLI\LoxNET.CLI.csproj", "{1475EE65-B71D-4517-8AA5-8B8AA43DB741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

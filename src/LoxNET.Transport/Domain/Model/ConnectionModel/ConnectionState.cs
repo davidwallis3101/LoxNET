@@ -23,11 +23,11 @@
 
 using EventFlow.Aggregates;
 using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ConnectionModel.Events;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
-using LoxNet.Transport.Domain.Model.ConnectionModel.Enums;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
+using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Enums;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel
 {
     public class ConnectionState : AggregateState<ConnectionAggregate, ConnectionId, ConnectionState>,
         IApply<ConnectionOpenedEvent>,

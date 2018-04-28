@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using LoxNet.Transport.Domain.Model.ConnectionModel;
+using LoxNET.Transport.Domain.Model.ConnectionModel;
 
-namespace LoxNet.Transport.Domain.Services
+namespace LoxNET.Transport.Domain.Services
 {
     public interface ISocketService
     {

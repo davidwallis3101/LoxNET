@@ -23,10 +23,10 @@
 
 using EventFlow.Aggregates;
 using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ConnectionModel.Events;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
+using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel
 {
     public class ConnectionAggregate : AggregateRoot<ConnectionAggregate, ConnectionId>
     {

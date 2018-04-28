@@ -23,9 +23,9 @@
 
 using EventFlow.Aggregates;
 using EventFlow.EventStores;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.Events
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Events
 {
     [EventVersion("ConnectionClosed", 1)]
     public class ConnectionClosedEvent : AggregateEvent<ConnectionAggregate, ConnectionId>

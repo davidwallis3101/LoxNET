@@ -24,7 +24,7 @@
 using EventFlow.Core;
 using EventFlow.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel
 {
     public class ConnectionId : Identity<ConnectionId>
     {

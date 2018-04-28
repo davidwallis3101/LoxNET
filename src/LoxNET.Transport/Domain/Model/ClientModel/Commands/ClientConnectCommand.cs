@@ -24,9 +24,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Commands;
-using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
 {
     public class ClientConnectCommand : Command<ClientAggregate, ClientId>
     {

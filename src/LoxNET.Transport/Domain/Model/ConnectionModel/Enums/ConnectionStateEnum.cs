@@ -1,6 +1,6 @@
 using System;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.Enums
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Enums
 {
     public enum ConnectionStateEnum
     {

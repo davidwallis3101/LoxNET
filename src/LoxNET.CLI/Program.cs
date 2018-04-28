@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LoxNet.CLI
+namespace LoxNET.CLI
 {
     class Program
     {

@@ -3,14 +3,14 @@ using System.Reflection;
 using EventFlow;
 using EventFlow.Configuration;
 using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ConnectionModel;
-using LoxNet.Transport.Domain.Services;
+using LoxNET.Transport.Domain.Model.ConnectionModel;
+using LoxNET.Transport.Domain.Services;
 
-namespace LoxNet.Transport
+namespace LoxNET.Transport
 {
-    public static class LoxNetTransport
+    public static class LoxNETTransport
     {
-        public static Assembly Assembly { get; } = typeof(LoxNetTransport).Assembly;
+        public static Assembly Assembly { get; } = typeof(LoxNETTransport).Assembly;
 
         public static IEventFlowOptions ConfigureTransportDomain(this IEventFlowOptions eventFlowOptions)
         {

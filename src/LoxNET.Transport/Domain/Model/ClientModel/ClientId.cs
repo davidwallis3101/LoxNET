@@ -24,7 +24,7 @@
 using EventFlow.Core;
 using EventFlow.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
     public class ClientId : Identity<ClientId>
     {
