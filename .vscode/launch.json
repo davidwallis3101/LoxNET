@@ -9,7 +9,7 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "buildWrapper",
             "program": "${workspaceFolder}/src/LoxNET.CLI/bin/Debug/netcoreapp2.0/LoxNET.CLI.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
