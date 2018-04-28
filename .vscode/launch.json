@@ -10,7 +10,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/tests/LoxNet.Transport.Tests/bin/Debug/netcoreapp2.0/LoxNet.Transport.Tests.dll",
+            "program": "${workspaceFolder}/src/LoxNet.CLI/bin/Debug/netcoreapp2.0/LoxNet.CLI.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",

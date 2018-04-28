@@ -11,6 +11,9 @@
             "presentation": {
                 "reveal": "silent"
             },
+            "linux": {
+                "command": "env TERM=xterm dotnet build"
+            },
             "problemMatcher": "$msCompile"
         }
     ]
