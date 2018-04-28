@@ -19,32 +19,40 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ClientModel.Events;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Commands;
 using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNet.Transport.Domain.Model.ClientModel.Commands
 {
-    public class ClientState : AggregateState<ClientAggregate, ClientId, ClientState>,
-        IApply<ClientInitializedEvent>,
-        IApply<ClientConnectedEvent>
+    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
     {
+        public Endpoint Endpoint { get; }
 
-        public Endpoint Endpoint { get; private set; }
-        public Credentials Credentials { get; private set; }
+        public Credentials Credentials { get; } 
 
-        public void Apply(ClientInitializedEvent evt)
+        public ClientInitializeCommand(
+            ClientId id, 
+            Endpoint endpoint,
+            Credentials credentials)
+            : base(id)
         {
-            Endpoint = evt.Endpoint;
-            Credentials = evt.Credentials;
-            
+            Endpoint = endpoint;
+
+            Credentials = credentials;
         }
-        public void Apply(ClientConnectedEvent evt)
+    }
+
+    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
+    {
+        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
         {
-            
+            aggregate.Connect(command.Endpoint);
+            return Task.FromResult(0);
         }
+        
     }
 }

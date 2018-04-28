@@ -19,32 +19,33 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using EventFlow.Configuration;
+using LoxNet.Transport.Domain.Model.ClientModel.Commands;
+using LoxNet.Transport.Domain.Services;
+using EventFlow.Exceptions;
+using EventFlow.Jobs;
+using EventFlow.Queries;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.Commands
+namespace LoxNet.Transport.Domain.Model.ClientModel.Jobs
 {
-    public class ClientConnected : Command<ConnectionAggregate, ConnectionId>
+    public class ClientAuthenticateJob : IJob
     {
-        public ConnectionUriContext ConnectionUriContext { get; }
-
-        public ClientConnected(ConnectionId id, ConnectionUriContext uri) : base(id)
+        public ClientAuthenticateJob(
+            ClientId id)
         {
-            ConnectionUriContext = uri;
+            ClientId = id;
         }
-    }
 
-    public class ClientConnectedHandler : CommandHandler<ConnectionAggregate, ConnectionId, ClientConnected>
-    {
-        public override Task ExecuteAsync(ConnectionAggregate aggregate, ClientConnected command, CancellationToken cancellationToken)
+        public ClientId ClientId { get; }
+
+        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            aggregate.Open(command.ConnectionUriContext);
-            return Task.FromResult(0);
+            await Task.FromResult(0);
         }
-        
     }
 }

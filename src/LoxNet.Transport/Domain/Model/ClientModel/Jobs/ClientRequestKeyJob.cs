@@ -21,30 +21,31 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ClientModel.Events;
-using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Configuration;
+using LoxNet.Transport.Domain.Model.ClientModel.Commands;
+using LoxNet.Transport.Domain.Services;
+using EventFlow.Exceptions;
+using EventFlow.Jobs;
+using EventFlow.Queries;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNet.Transport.Domain.Model.ClientModel.Jobs
 {
-    public class ClientState : AggregateState<ClientAggregate, ClientId, ClientState>,
-        IApply<ClientInitializedEvent>,
-        IApply<ClientConnectedEvent>
+    public class ClientRequestKeyJob : IJob
     {
-
-        public Endpoint Endpoint { get; private set; }
-        public Credentials Credentials { get; private set; }
-
-        public void Apply(ClientInitializedEvent evt)
+        public ClientRequestKeyJob(
+            ClientId id)
         {
-            Endpoint = evt.Endpoint;
-            Credentials = evt.Credentials;
-            
+            ClientId = id;
         }
-        public void Apply(ClientConnectedEvent evt)
+
+        public ClientId ClientId { get; }
+
+        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            
+            await Task.FromResult(0);
         }
     }
 }

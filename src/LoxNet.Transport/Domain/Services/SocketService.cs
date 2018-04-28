@@ -52,7 +52,7 @@ namespace LoxNet.Transport.Domain.Services
         {
             try 
             {
-                while (_socket.State == WebConnectionStateContext.Open)
+                while (_socket.State == WebSocketState.Open)
                 {
                     var header = await retrieveAsync(8).ConfigureAwait(false);
                     var contentSize = header.ElementAt(2);

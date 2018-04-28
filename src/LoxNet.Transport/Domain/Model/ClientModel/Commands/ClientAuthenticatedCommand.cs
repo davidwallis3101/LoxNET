@@ -42,7 +42,7 @@ namespace LoxNet.Transport.Domain.Model.ClientModel.Commands
     {
         public override Task ExecuteAsync(ClientAggregate aggregate, ClientAuthenticatedCommand command, CancellationToken cancellationToken)
         {
-            aggregate.Authenticated(command.Credentials);
+            aggregate.Authenticate(command.Credentials);
             return Task.FromResult(0);
         }
         

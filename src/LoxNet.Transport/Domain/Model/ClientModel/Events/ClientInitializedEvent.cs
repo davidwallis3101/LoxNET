@@ -22,29 +22,23 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNet.Transport.Domain.Model.ClientModel.Events;
+using EventFlow.EventStores;
 using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ClientModel
+namespace LoxNet.Transport.Domain.Model.ClientModel.Events
 {
-    public class ClientState : AggregateState<ClientAggregate, ClientId, ClientState>,
-        IApply<ClientInitializedEvent>,
-        IApply<ClientConnectedEvent>
+    [EventVersion("ClientInitialized", 1)]
+    public class ClientInitializedEvent : AggregateEvent<ClientAggregate, ClientId>
     {
+        public Endpoint Endpoint { get; }
 
-        public Endpoint Endpoint { get; private set; }
-        public Credentials Credentials { get; private set; }
+        public Credentials Credentials { get; } 
 
-        public void Apply(ClientInitializedEvent evt)
+
+        public ClientInitializedEvent(Endpoint endpoint, Credentials credentials)
         {
-            Endpoint = evt.Endpoint;
-            Credentials = evt.Credentials;
-            
-        }
-        public void Apply(ClientConnectedEvent evt)
-        {
-            
+            Endpoint = endpoint;
+            Credentials = credentials;
         }
     }
 }

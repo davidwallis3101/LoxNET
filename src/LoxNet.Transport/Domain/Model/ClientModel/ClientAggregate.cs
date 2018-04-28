@@ -36,12 +36,16 @@ namespace LoxNet.Transport.Domain.Model.ClientModel
         {
             Register(_state);
         }
+        public void Initialize(Endpoint endpoint, Credentials credentials)
+        {
+            Emit(new ClientInitializedEvent(endpoint, credentials));
+        }
 
-        public void Connected(Endpoint endpoint)
+        public void Connect(Endpoint endpoint)
         {
             Emit(new ClientConnectedEvent(endpoint));
         }
-        public void Authenticated(Credentials credentials)
+        public void Authenticate(Credentials credentials)
         {
             Emit(new ClientAuthenticatedEvent(credentials));
         }
