@@ -25,6 +25,7 @@ using EventFlow.Aggregates;
 using EventFlow.Extensions;
 using LoxNet.Transport.Domain.Model.ConnectionModel.Events;
 using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using LoxNet.Transport.Domain.Model.ConnectionModel.Enums;
 
 namespace LoxNet.Transport.Domain.Model.ConnectionModel
 {
@@ -34,20 +35,34 @@ namespace LoxNet.Transport.Domain.Model.ConnectionModel
         IApply<ConnectionChangedEvent>,
         IApply<ConnectionReceivedEvent>
     {
+        public ConnectionUriContext Uri { get; set; }
+
+        public ConnectionStateContext State  { get; set; }
+
+
+        public ConnectionState()
+        {
+            State = new ConnectionStateContext(ConnectionStateEnum.Closed);
+        }
+
         public void Apply(ConnectionOpenedEvent evt)
         {
+            Uri = evt.Uri;
+            State = new ConnectionStateContext(ConnectionStateEnum.Open);
         }
         public void Apply(ConnectionClosedEvent evt)
         {
+            State = new ConnectionStateContext(ConnectionStateEnum.Closed);
 
         }
         public void Apply(ConnectionSentEvent evt)
         {
 
         }
+        
         public void Apply(ConnectionChangedEvent evt)
         {
-
+            State = new ConnectionStateContext(evt.State.Value);
         }
         public void Apply(ConnectionReceivedEvent evt)
         {

@@ -31,11 +31,11 @@ namespace LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects
 {
     public class ConnectionStateContext : ValueObject
     {
-        public ConnectionStateEnum State { get; }
+        public ConnectionStateEnum Value { get; }
 
         public ConnectionStateContext(ConnectionStateEnum state)
         {
-            State = state;
+            Value = state;
         }
     }
 }

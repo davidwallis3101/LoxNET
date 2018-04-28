@@ -21,19 +21,26 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.EventStores;
-using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using EventFlow.Entities;
+using LoxNet.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNet.Transport.Domain.Model.ConnectionModel.Events
+namespace LoxNet.Transport.Domain.Model.ClientModel
 {
-    [EventVersion("ConnectionOpened", 1)]
-    public class ConnectionOpenedEvent : AggregateEvent<ConnectionAggregate, ConnectionId>
+    public class Client : Entity<ClientId>
     {
-        public ConnectionUriContext Uri { get; }
-        public ConnectionOpenedEvent(ConnectionUriContext uri)
+        public Endpoint Endpoint { get; }
+
+        public Credentials Credentials { get; }
+
+        public Client(
+            ClientId id,
+            Endpoint endpoint,
+            Credentials credentials)
+            : base(id)
         {
-            Uri = uri;
+            Endpoint = endpoint;
+            Credentials = credentials;
         }
+
     }
 }

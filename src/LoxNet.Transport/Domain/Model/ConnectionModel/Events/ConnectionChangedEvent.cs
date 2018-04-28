@@ -27,7 +27,7 @@ using LoxNet.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
 namespace LoxNet.Transport.Domain.Model.ConnectionModel.Events
 {
-    [EventVersion("ConnectionStateChanged", 1)]
+    [EventVersion("ConnectionChanged", 1)]
     public class ConnectionChangedEvent : AggregateEvent<ConnectionAggregate, ConnectionId>
     {
         public ConnectionStateContext State { get; }
