@@ -25,7 +25,6 @@ namespace LoxNET.CLI
 
         public Bootstrap()
         {
-
             var mquri = new Uri("amqp://localhost");
 
            _resolver = EventFlowOptions.New

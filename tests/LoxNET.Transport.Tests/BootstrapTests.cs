@@ -12,6 +12,8 @@ using LoxNET.Transport.Domain.Model.ClientModel;
 using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 using EventFlow.Extensions;
 using EventFlow.Logs;
+using EventFlow.RabbitMQ;
+using EventFlow.RabbitMQ.Extensions;
 //using EventFlow.TestHelpers;
 using NUnit.Framework;
 
@@ -26,8 +28,11 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
+            var mquri = new Uri("amqp://localhost");
             _resolver = EventFlowOptions.New
                 .ConfigureTransportDomain()
+                .UseConsoleLog()
+                .PublishToRabbitMq(RabbitMqConfiguration.With(mquri))
                 .CreateResolver();
             _aggregateStore = _resolver.Resolve<IAggregateStore>();
             _commandBus = _resolver.Resolve<ICommandBus>();
