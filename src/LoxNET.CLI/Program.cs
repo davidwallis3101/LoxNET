@@ -20,16 +20,33 @@ namespace LoxNET.CLI
 
         static void Main(string[] args)
         {
-            Console.WriteLine("LoxNET.CLI");
+            Console.WriteLine("LoxNET.CLI start");
 
-            var bootstrap = new Bootstrap();
+            //await Setup().ConfigureAwait(false);
+            /*await new TaskFactory().StartNew(
+                async () => 
 
+            );*/
 
-            new TaskFactory().StartNew(
-                async () => await bootstrap.Setup()
+            var task = new TaskFactory().StartNew(
+                async () => await Setup().ConfigureAwait(false)
             );
+            while (!task.IsCompleted)
+            {
+                Console.WriteLine("wait.....");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("LoxNET.CLI end");
+        }
 
-            bootstrap.Dispose();
+
+        static async Task Setup()
+        {
+            Console.WriteLine("LoxNET.CLI setup start");
+            var bootstrap = new Bootstrap();
+            await bootstrap.SetupAsync().ConfigureAwait(false);
+            Console.WriteLine("LoxNET.CLI setup end");
+
         }
     }
 }

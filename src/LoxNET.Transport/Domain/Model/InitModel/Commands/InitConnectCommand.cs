@@ -19,13 +19,32 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Collections.Generic;
-using LoxNET.Transport.Domain.Model.ClientModel;
-using EventFlow.Queries;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Commands;
+using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Queries
+namespace LoxNET.Transport.Domain.Model.InitModel.Commands
 {
+    public class InitConnectCommand : Command<InitAggregate, InitId>
+    {
+        public InitConnectCommand(InitId id) : base(id)
+        {
+        }
+    }
 
+    public class InitConnectCommandHandler : CommandHandler<InitAggregate, InitId, InitConnectCommand>
+    {
+        public override Task ExecuteAsync(
+            InitAggregate aggregate, 
+            InitConnectCommand command, 
+            CancellationToken cancellationToken)
+        {
+            //aggregate.Authenticate(command.Credentials);
+            return Task.FromResult(0);
+        }
+        
+    }
 }

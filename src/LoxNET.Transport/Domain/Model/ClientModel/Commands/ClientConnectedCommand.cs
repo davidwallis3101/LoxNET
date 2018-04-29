@@ -28,29 +28,27 @@ using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
 namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class ClientConnectedCommand : Command<ClientAggregate, ClientId>
     {
         public Endpoint Endpoint { get; }
 
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
+        public ClientConnectedCommand(
             ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
+            Endpoint endpoint)
             : base(id)
         {
             Endpoint = endpoint;
-
-            Credentials = credentials;
         }
     }
 
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
+    public class ClientConnectedCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientConnectedCommand>
     {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
+        public override Task ExecuteAsync(
+            ClientAggregate aggregate, 
+            ClientConnectedCommand command, 
+            CancellationToken cancellationToken)
         {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
+            aggregate.Connected(command.Endpoint);
             return Task.FromResult(0);
         }
         

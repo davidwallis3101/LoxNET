@@ -19,40 +19,30 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using EventFlow.Aggregates;
+using EventFlow.Extensions;
+using LoxNET.Transport.Domain.Model.InitModel.Events;
+using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.InitModel
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class InitState : AggregateState<InitAggregate, InitId, InitState>,
+        IApply<InitCheckEvent>,
+        IApply<InitConnectEvent>
     {
-        public Endpoint Endpoint { get; }
-
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
-            ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
-            : base(id)
+        public void Apply(InitCheckEvent evt)
         {
-            Endpoint = endpoint;
-
-            Credentials = credentials;
         }
-    }
-
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
-    {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
+        public void Apply(InitConnectEvent evt)
         {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
-            return Task.FromResult(0);
         }
-        
+        public void Apply(InitKeyEvent evt)
+        {
+        }
+        public void Apply(InitAuthEvent evt)
+        {
+        }
     }
 }

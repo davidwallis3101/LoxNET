@@ -26,6 +26,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Configuration;
 using LoxNET.Transport.Domain.Model.ClientModel.Commands;
+using LoxNET.Transport.Domain.Model.ClientModel.ReadModels;
 using LoxNET.Transport.Domain.Services;
 using EventFlow.Exceptions;
 using EventFlow.Jobs;
@@ -45,7 +46,29 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.Jobs
 
         public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            await Task.FromResult(0);
+            var queryProcessor = resolver.Resolve<IQueryProcessor>();
+            var jobScheduler = resolver.Resolve<IJobScheduler>();
+            var socketService = resolver.Resolve<ISocketService>();
+
+            var client = await queryProcessor.ProcessAsync(
+                new ReadModelByIdQuery<ClientConnectReadModel>(ClientId), 
+                cancellationToken
+            ).ConfigureAwait(false);
+
+            await socketService.OpenAsync(
+                ClientId, 
+                client.Address, 
+                client.Port, 
+                cancellationToken
+            ).ConfigureAwait(false);
+            
+            /*var client = await queryProcessor.ProcessAsync()
+            var cargos = await queryProcessor.ProcessAsync(new GetCargosDependentOnVoyageQuery(VoyageId), cancellationToken).ConfigureAwait(false);
+            var jobs = cargos.Select(c => new VerifyCargoItineraryJob(c.Id));
+
+            await Task.WhenAll(jobs.Select(j => jobScheduler.ScheduleNowAsync(j, cancellationToken))).ConfigureAwait(false);
+            */
+            //await Task.FromResult(0);
         }
     }
 }

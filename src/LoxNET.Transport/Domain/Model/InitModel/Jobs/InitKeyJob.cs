@@ -19,40 +19,32 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using EventFlow.Configuration;
+using LoxNET.Transport.Domain.Model.InitModel.Commands;
+using LoxNET.Transport.Domain.Services;
+using EventFlow.Exceptions;
+using EventFlow.Jobs;
+using EventFlow.Queries;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.InitModel.Jobs
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class InitKeyJob : IJob
     {
-        public Endpoint Endpoint { get; }
-
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
-            ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
-            : base(id)
+        public InitKeyJob(InitId id)
         {
-            Endpoint = endpoint;
-
-            Credentials = credentials;
+            InitId = id;
         }
-    }
 
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
-    {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
+        public InitId InitId { get; }
+
+        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
-            return Task.FromResult(0);
+            await Task.FromResult(0);
         }
-        
     }
 }

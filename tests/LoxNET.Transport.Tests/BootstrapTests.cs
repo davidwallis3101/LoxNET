@@ -28,7 +28,9 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            var mquri = new Uri("amqp://localhost");
+            var mquri = new Uri("amqp://rabbitmq:rabbitmq@127.0.0.1");
+
+            //#Rabbit
             _resolver = EventFlowOptions.New
                 .ConfigureTransportDomain()
                 .UseConsoleLog()
@@ -78,7 +80,7 @@ namespace Tests
             return UpdateAsync<ClientAggregate, ClientId>(
                 client.Id, 
                 a => a.Initialize(
-                    new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
+                    new Endpoint("testminiserver.loxone.com", 7777),
                     new Credentials("Web", "Web")
                 )
             );

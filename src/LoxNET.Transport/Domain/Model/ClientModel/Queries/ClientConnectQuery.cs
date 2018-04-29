@@ -19,40 +19,42 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using System.Collections.Generic;
+using LoxNET.Transport.Domain.Model.ClientModel;
+using EventFlow.Queries;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.ClientModel.Queries
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class ClientByIdQuery : IQuery<Client>
     {
-        public Endpoint Endpoint { get; }
+        public ClientId Id { get; }
 
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
-            ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
-            : base(id)
+        public ClientByIdQuery(ClientId id)
         {
-            Endpoint = endpoint;
-
-            Credentials = credentials;
+            Id = id;
         }
     }
-
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
+    /*
+    public class GetUserByUsernameQueryHandler :
+        IQueryHandler<GetUserByUsernameQuery, User>
     {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
+        private IClientReadModelRepository _userReadModelRepository;
+
+        public GetUserByUsernameQueryHandler(
+            IUserReadModelRepository userReadModelRepository)
         {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
-            return Task.FromResult(0);
+            _userReadModelRepository = userReadModelRepository;
         }
-        
-    }
+
+        Task<User> ExecuteQueryAsync(
+            GetUserByUsernameQuery query,
+            CancellationToken cancellationToken)
+        {
+            return _userReadModelRepository.GetByUsernameAsync(
+            query.Username,
+            cancellationToken)
+        }
+    } */
 }

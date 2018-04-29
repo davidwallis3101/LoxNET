@@ -5,6 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Net.WebSockets;
 using EventFlow;
+using LoxNET.Transport.Domain.Model.ClientModel;
+using LoxNET.Transport.Domain.Model.ClientModel.Commands;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 using LoxNET.Transport.Domain.Model.ConnectionModel;
 using LoxNET.Transport.Domain.Model.ConnectionModel.Commands;
 using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
@@ -19,8 +22,6 @@ namespace LoxNET.Transport.Domain.Services
 
         private readonly ICommandBus _commandBus;
 
-        private ConnectionId _connectionId;
-
         public SocketService(ICommandBus commandBus)
         {
             _socket = new ClientWebSocket();
@@ -28,10 +29,27 @@ namespace LoxNET.Transport.Domain.Services
             _cancellationToken = new CancellationToken();
         }
 
-        public async Task OpenAsync(ConnectionId id, string ipaddress, int port, CancellationToken token)
+        public async Task OpenAsync(ClientId id, string address, int port, CancellationToken token)
         {
-            _connectionId = id;
-            await Task.FromResult(0);
+            var builder = new UriBuilder
+            {
+                Host = address,
+                Port = port,
+                Scheme = "ws",
+                Path = "ws/rfc6455"
+            };
+
+            await _socket.ConnectAsync(
+                builder.Uri, 
+                token
+            ).ConfigureAwait(false);
+            
+            await _commandBus.PublishAsync(
+                new ClientConnectedCommand(
+                    id, 
+                    new Endpoint(address, port)), 
+                token
+            ).ConfigureAwait(false);
         }
 
         public async Task SendAsync(CancellationToken token)
@@ -60,7 +78,7 @@ namespace LoxNET.Transport.Domain.Services
 
                     await _commandBus.PublishAsync(
                         new ConnectionReceivedCommand(
-                            _connectionId,
+                            new ConnectionId("ABCD"),
                             new ConnectionReceivedContext(header, content)
                         ), 
                         _cancellationToken
@@ -103,7 +121,7 @@ namespace LoxNET.Transport.Domain.Services
                     ).ConfigureAwait(false);
                     
                     await _commandBus.PublishAsync(
-                        new ConnectionClosedCommand(_connectionId), 
+                        new ConnectionClosedCommand(new ConnectionId("ABCD")), 
                         _cancellationToken
                     ).ConfigureAwait(false);
 

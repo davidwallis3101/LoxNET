@@ -24,33 +24,25 @@
 using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.InitModel.Commands
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class InitKeyCommand : Command<InitAggregate, InitId>
     {
-        public Endpoint Endpoint { get; }
-
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
-            ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
-            : base(id)
+        public InitKeyCommand(InitId id) : base(id)
         {
-            Endpoint = endpoint;
-
-            Credentials = credentials;
         }
     }
 
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
+    public class InitKeyCommandHandler : CommandHandler<InitAggregate, InitId, InitKeyCommand>
     {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
+        public override Task ExecuteAsync(
+            InitAggregate aggregate, 
+            InitKeyCommand command, 
+            CancellationToken cancellationToken)
         {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
+            //aggregate.Authenticate(command.Credentials);
             return Task.FromResult(0);
         }
         

@@ -19,40 +19,33 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using System;
+using System.Collections.Generic;
+using EventFlow.Core;
+using EventFlow.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
 {
-    public class ClientInitializeCommand : Command<ClientAggregate, ClientId>
+    public class HostSettings : ValueObject
     {
-        public Endpoint Endpoint { get; }
+        public HostAddress Address { get; }
+        public HostPort Port { get; }
+        public HostUsername User { get; }
+        public HostPassword Password { get; }
+        public HostPublicKey PublicKey { get; set; }
 
-        public Credentials Credentials { get; } 
-
-        public ClientInitializeCommand(
-            ClientId id, 
-            Endpoint endpoint,
-            Credentials credentials)
-            : base(id)
+        public HostSettings(
+            string address, 
+            int port, 
+            string user, 
+            string password)
         {
-            Endpoint = endpoint;
-
-            Credentials = credentials;
+            Address = new HostAddress(address);
+            Port = new HostPort(port);
+            User = new HostUsername(user);
+            Password = new HostPassword(password);
         }
-    }
-
-    public class ClientInitializeCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientInitializeCommand>
-    {
-        public override Task ExecuteAsync(ClientAggregate aggregate, ClientInitializeCommand command, CancellationToken cancellationToken)
-        {
-            aggregate.Initialize(command.Endpoint, command.Credentials);
-            return Task.FromResult(0);
-        }
-        
     }
 }

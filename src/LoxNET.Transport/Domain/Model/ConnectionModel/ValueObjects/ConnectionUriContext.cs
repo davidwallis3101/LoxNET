@@ -30,21 +30,18 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects
 {
     public class ConnectionUriContext : ValueObject
     {
-        public ConnectionId ConnectionId { get; }
-
-        public string IPAddress { get; }
+        public string Address { get; }
 
         public int Port { get; }
 
-        public ConnectionUriContext(ConnectionId id, string ip, int port)
+        public ConnectionUriContext(string address, int port)
         {
-            if (String.IsNullOrEmpty(ip)) 
-                throw new ArgumentNullException(nameof(ip));
+            if (String.IsNullOrEmpty(address)) 
+                throw new ArgumentNullException(nameof(address));
             if (port.Equals(0)) 
                 throw new ArgumentNullException(nameof(port));
 
-            ConnectionId = id;
-            IPAddress = ip;
+            Address = address;
             Port = port;
         }
     }

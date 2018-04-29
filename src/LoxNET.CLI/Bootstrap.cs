@@ -25,12 +25,15 @@ namespace LoxNET.CLI
 
         public Bootstrap()
         {
-            var mquri = new Uri("amqp://localhost");
+            var mquri = new Uri("amqp://rabbitmq:rabbitmq@127.0.0.1");
+            var mqconf = RabbitMqConfiguration.With(
+                mquri, true, 5, "loxnet"
+            );
 
            _resolver = EventFlowOptions.New
                 .ConfigureTransportDomain()
                 .UseConsoleLog()
-                .PublishToRabbitMq(RabbitMqConfiguration.With(mquri))
+                .PublishToRabbitMq(mqconf)
                 .CreateResolver();
 
             _aggregateStore = _resolver
@@ -50,7 +53,7 @@ namespace LoxNET.CLI
 
             return Task.FromResult(0);
         }
-        public async Task Setup()
+        public async Task SetupAsync()
         {
 
             try
@@ -63,7 +66,7 @@ namespace LoxNET.CLI
             }
 
             var svc = _resolver.Resolve<ISocketService>();
-
+            //return Task.FromResult(0);
         }
 
 
@@ -79,7 +82,7 @@ namespace LoxNET.CLI
             return UpdateAsync<ClientAggregate, ClientId>(
                 client.Id, 
                 a => a.Initialize(
-                    new Endpoint("LoxoneTestServer", "testminiserver.loxone.com", 7777),
+                    new Endpoint("testminiserver.loxone.com", 7777),
                     new Credentials("Web", "Web")
                 )
             );
