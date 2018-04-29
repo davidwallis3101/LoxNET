@@ -28,11 +28,11 @@ using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
 namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
 {
-    public class ClientConnectedCommand : Command<ClientAggregate, ClientId>
+    public class ConnectCommand : Command<ClientAggregate, ClientId>
     {
         public Endpoint Endpoint { get; }
 
-        public ClientConnectedCommand(
+        public ConnectCommand(
             ClientId id, 
             Endpoint endpoint)
             : base(id)
@@ -41,11 +41,11 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
         }
     }
 
-    public class ClientConnectedCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientConnectedCommand>
+    public class ConnectCommandHandler : CommandHandler<ClientAggregate, ClientId, ConnectCommand>
     {
         public override Task ExecuteAsync(
             ClientAggregate aggregate, 
-            ClientConnectedCommand command, 
+            ConnectCommand command, 
             CancellationToken cancellationToken)
         {
             aggregate.Connect(command.Endpoint);

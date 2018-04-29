@@ -27,6 +27,9 @@ namespace LoxNET.Transport
 {
     public interface ILxTransportConfiguration
     {
-        Uri Uri { get; }
+        string Hostname { get; }
+        int Port { get; }
+        string Username { get; }
+        string Password { get; }
     }
 }

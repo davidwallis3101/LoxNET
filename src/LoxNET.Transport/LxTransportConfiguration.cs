@@ -27,19 +27,34 @@ namespace LoxNET.Transport
 {
     public class LxTransportConfiguration : ILxTransportConfiguration
     {
-        public Uri Uri { get; }
+        public string Hostname { get; }
+        public int Port { get; }
+        public string Username { get; }
+        public string Password { get; }
 
 
-        public static ILxTransportConfiguration With(Uri uri)
+        public static ILxTransportConfiguration With(
+            string hostname, int port,
+            string username, string password)
         {
-            return new LxTransportConfiguration(uri);
+            return new LxTransportConfiguration(
+                hostname, port, 
+                username, password);
         }
 
-        private LxTransportConfiguration(Uri uri)
+        private LxTransportConfiguration(
+            string hostname, int port,
+            string username, string password)
         {
-            if (uri == null) throw new ArgumentNullException(nameof(uri));
+            if (String.IsNullOrEmpty(hostname)) throw new ArgumentNullException(nameof(hostname));
+            if (port == 0) throw new ArgumentNullException(nameof(port));
+            if (String.IsNullOrEmpty(username)) throw new ArgumentNullException(nameof(username));
+            if (String.IsNullOrEmpty(password)) throw new ArgumentNullException(nameof(password));
 
-            Uri = uri;
+            Hostname = hostname;
+            Port = port;
+            Username = username;
+            Password = password;
         }
     }
 }

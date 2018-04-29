@@ -45,7 +45,7 @@ namespace LoxNET.Transport.Domain.Services
             ).ConfigureAwait(false);
             
             await _commandBus.PublishAsync(
-                new ClientConnectedCommand(
+                new ConnectCommand(
                     id, 
                     new Endpoint(Hostname, port)), 
                 token
