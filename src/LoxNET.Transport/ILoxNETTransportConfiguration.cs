@@ -19,38 +19,14 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using System;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel.Commands
+namespace LoxNET.Transport 
 {
-    public class ClientConnectedCommand : Command<ClientAggregate, ClientId>
+    public interface ILoxNETTransportConfiguration
     {
-        public Endpoint Endpoint { get; }
-
-        public ClientConnectedCommand(
-            ClientId id, 
-            Endpoint endpoint)
-            : base(id)
-        {
-            Endpoint = endpoint;
-        }
-    }
-
-    public class ClientConnectedCommandHandler : CommandHandler<ClientAggregate, ClientId, ClientConnectedCommand>
-    {
-        public override Task ExecuteAsync(
-            ClientAggregate aggregate, 
-            ClientConnectedCommand command, 
-            CancellationToken cancellationToken)
-        {
-            aggregate.Connect(command.Endpoint);
-            return Task.FromResult(0);
-        }
-        
+        Uri Uri { get; }
     }
 }

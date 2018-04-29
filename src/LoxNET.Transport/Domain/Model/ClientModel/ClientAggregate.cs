@@ -41,7 +41,7 @@ namespace LoxNET.Transport.Domain.Model.ClientModel
             Emit(new ClientInitializedEvent(endpoint, credentials));
         }
 
-        public void Connected(Endpoint endpoint)
+        public void Connect(Endpoint endpoint)
         {
             Emit(new ClientConnectedEvent(endpoint));
         }

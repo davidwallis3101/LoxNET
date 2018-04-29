@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using EventFlow.Configuration;
 using EventFlow.Queries;
 using EventFlow.Aggregates;
+using EventFlow;
+using EventFlow.Core;
 using LoxNET.Transport.Domain.Model.ClientModel.Queries;
 using LoxNET.Transport.Domain.Model.ClientModel.Events;
 using LoxNET.Transport.Domain.Services;
@@ -26,12 +28,13 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.Subscribers
         {
             var socketService = _resolver.Resolve<ISocketService>();
 
-            await socketService.OpenAsync(
-                domainEvent.AggregateIdentity,
-                domainEvent.AggregateEvent.Endpoint.Address,
+            /*await socketService.OpenAsync(
+                Identity.New,
+                domainEvent.AggregateEvent.Endpoint.IPAddress,
                 domainEvent.AggregateEvent.Endpoint.Port, 
                 cancellationToken
-            ).ConfigureAwait(false);
+            ).ConfigureAwait(false);*/
+            await Task.FromResult(0);
 
         }
     }
