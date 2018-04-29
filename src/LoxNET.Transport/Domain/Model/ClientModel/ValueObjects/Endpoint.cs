@@ -30,12 +30,12 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
 {
     public class Endpoint : ValueObject
     {
-        public string Address { get; }
+        public string Hostname { get; }
         public int Port { get; }
 
-        public Endpoint(string ip, int port)
+        public Endpoint(string hostname, int port)
         {
-            Address = ip;
+            Hostname = hostname;
             Port = port;
         }
     }

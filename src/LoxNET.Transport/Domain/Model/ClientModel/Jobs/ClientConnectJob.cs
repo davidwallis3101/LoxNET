@@ -57,7 +57,7 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.Jobs
 
             await socketService.OpenAsync(
                 ClientId, 
-                client.Address, 
+                client.Hostname, 
                 client.Port, 
                 cancellationToken
             ).ConfigureAwait(false);

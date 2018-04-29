@@ -4,12 +4,12 @@ using EventFlow.Exceptions;
 
 namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
 {
-    public class HostPassword : SingleValueObject<string>
+    public class PublicKey : SingleValueObject<string>
     {
-        public HostPassword(string value) : base(value)
+        public PublicKey(string value) : base(value)
         {
             if (string.IsNullOrEmpty(value))
-                throw DomainError.With($"Invalid Password '{value}'");
+                throw DomainError.With($"Invalid PublicKey '{value}'");
         }
     }
 }

@@ -4,12 +4,12 @@ using EventFlow.Exceptions;
 
 namespace LoxNET.Transport.Domain.Model.InitModel.ValueObjects
 {
-    public class InitAddress : SingleValueObject<string>
+    public class InitHostname : SingleValueObject<string>
     {
-        public InitAddress(string value) : base(value)
+        public InitHostname(string value) : base(value)
         {
             if (string.IsNullOrEmpty(value))
-                throw DomainError.With($"Invalid Address '{value}'");
+                throw DomainError.With($"Invalid Hostname '{value}'");
         }
     }
 }

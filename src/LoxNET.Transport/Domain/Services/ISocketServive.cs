@@ -9,7 +9,7 @@ namespace LoxNET.Transport.Domain.Services
 {
     public interface ISocketService
     {
-        Task OpenAsync(ClientId id, string address, int port, CancellationToken token);
+        Task OpenAsync(ClientId id, string Hostname, int port, CancellationToken token);
         Task SendAsync(CancellationToken token);
         void Listen();       
     }

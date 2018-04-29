@@ -13,7 +13,7 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.ReadModels
         IAmReadModelFor<ClientAggregate, ClientId, ClientInitializedEvent>
     {
         public string ClientId { get; set; }
-        public string Address { get; set; }
+        public string Hostname { get; set; }
         public int Port { get; set; }
 
         public void Apply(
@@ -22,7 +22,7 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.ReadModels
         {
             ClientId = domainEvent.AggregateIdentity.Value;
             var endpoint = domainEvent.AggregateEvent.Endpoint; 
-            Address = endpoint.Address;
+            Hostname = endpoint.Hostname;
             Port = endpoint.Port;
         }
     }

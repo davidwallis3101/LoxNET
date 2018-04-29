@@ -30,22 +30,22 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
 {
     public class HostSettings : ValueObject
     {
-        public HostAddress Address { get; }
-        public HostPort Port { get; }
-        public HostUsername User { get; }
-        public HostPassword Password { get; }
-        public HostPublicKey PublicKey { get; set; }
+        public Hostname Hostname { get; }
+        public Port Port { get; }
+        public Username User { get; }
+        public Password Password { get; }
+        public PublicKey PublicKey { get; set; }
 
         public HostSettings(
-            string address, 
+            string Hostname, 
             int port, 
             string user, 
             string password)
         {
-            Address = new HostAddress(address);
-            Port = new HostPort(port);
-            User = new HostUsername(user);
-            Password = new HostPassword(password);
+            Hostname = new Hostname(Hostname);
+            Port = new Port(port);
+            User = new Username(user);
+            Password = new Password(password);
         }
     }
 }

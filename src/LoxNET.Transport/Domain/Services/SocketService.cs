@@ -29,11 +29,11 @@ namespace LoxNET.Transport.Domain.Services
             _cancellationToken = new CancellationToken();
         }
 
-        public async Task OpenAsync(ClientId id, string address, int port, CancellationToken token)
+        public async Task OpenAsync(ClientId id, string Hostname, int port, CancellationToken token)
         {
             var builder = new UriBuilder
             {
-                Host = address,
+                Host = Hostname,
                 Port = port,
                 Scheme = "ws",
                 Path = "ws/rfc6455"
@@ -47,7 +47,7 @@ namespace LoxNET.Transport.Domain.Services
             await _commandBus.PublishAsync(
                 new ClientConnectedCommand(
                     id, 
-                    new Endpoint(address, port)), 
+                    new Endpoint(Hostname, port)), 
                 token
             ).ConfigureAwait(false);
         }

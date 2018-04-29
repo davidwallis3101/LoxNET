@@ -30,7 +30,7 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.Subscribers
 
             /*await socketService.OpenAsync(
                 Identity.New,
-                domainEvent.AggregateEvent.Endpoint.IPAddress,
+                domainEvent.AggregateEvent.Endpoint.Hostname,
                 domainEvent.AggregateEvent.Endpoint.Port, 
                 cancellationToken
             ).ConfigureAwait(false);*/
