@@ -22,27 +22,11 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Logs;
 
 namespace LoxNET.Transport 
 {
-    public class LoxNETMessageFactory : ILoxNETMessageFactory
+    public interface ILxTransportConfiguration
     {
-
-        private readonly ILog _log;
-        public LoxNETMessageFactory(ILog log)
-        {
-            _log = log;
-        }
-
-
-        public async Task<ILoxNETMessage> CreateMessageAsync(object xyz, CancellationToken token)
-        {
-            await Task.FromResult(0);
-            return new LoxNETMessage();
-        }
-
+        Uri Uri { get; }
     }
 }

@@ -8,9 +8,9 @@ using LoxNET.Transport.Domain.Services;
 
 namespace LoxNET.Transport
 {
-    public static class LoxNETTransport
+    public static class LxTransport
     {
-        public static Assembly Assembly { get; } = typeof(LoxNETTransport).Assembly;
+        public static Assembly Assembly { get; } = typeof(LxTransport).Assembly;
 
         public static IEventFlowOptions ConfigureTransportDomain(this IEventFlowOptions eventFlowOptions)
         {

@@ -1,1 +1,1 @@
-# LoxNET tests
+# Lx tests

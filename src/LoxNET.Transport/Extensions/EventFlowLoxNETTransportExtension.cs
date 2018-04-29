@@ -29,11 +29,11 @@ using EventFlow.Configuration;
 
 namespace LoxNET.Transport.Extensions
 {
-    public static class EventFlowLoxNETTransportExtension
+    public static class EventFlowLxTransportExtension
     {
-        public static IEventFlowOptions AddLoxNETTransport(
+        public static IEventFlowOptions AddLxTransport(
             this IEventFlowOptions eventFlowOptions, 
-            ILoxNETTransportConfiguration configuration)
+            ILxTransportConfiguration configuration)
         {
             registerCommon(eventFlowOptions, configuration);
             registerServices(eventFlowOptions);
@@ -46,7 +46,7 @@ namespace LoxNET.Transport.Extensions
 
 
 
-        private static void registerCommon(IEventFlowOptions options, ILoxNETTransportConfiguration configuration)
+        private static void registerCommon(IEventFlowOptions options, ILxTransportConfiguration configuration)
         {
             options.RegisterServices(sr => 
             {
@@ -58,10 +58,10 @@ namespace LoxNET.Transport.Extensions
         {
             options.RegisterServices(sr => 
             {
-                sr.Register<ILoxNETConnectionFactory, LoxNETConnectionFactory>(Lifetime.Singleton);
-                sr.Register<ILoxNETConnection, LoxNETConnection>(Lifetime.Singleton);
-                sr.Register<ILoxNETMessageFactory, LoxNETMessageFactory>(Lifetime.Singleton);
-                sr.Register<ILoxNETMessage, LoxNETMessage>(Lifetime.Singleton);
+                sr.Register<ILxConnectionFactory, LxConnectionFactory>(Lifetime.Singleton);
+                sr.Register<ILxConnection, LxConnection>(Lifetime.Singleton);
+                sr.Register<ILxMessageFactory, LxMessageFactory>(Lifetime.Singleton);
+                sr.Register<ILxMessage, LxMessage>(Lifetime.Singleton);
             });
         } 
 

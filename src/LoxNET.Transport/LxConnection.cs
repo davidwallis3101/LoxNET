@@ -25,7 +25,7 @@ using System;
 
 namespace LoxNET.Transport 
 {
-    public class LoxNETConnection : ILoxNETConnection
+    public class LxConnection : ILxConnection
     {
     }
 }

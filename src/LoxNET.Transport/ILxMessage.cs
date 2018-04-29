@@ -22,13 +22,10 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace LoxNET.Transport 
 {
-    public interface ILoxNETConnectionFactory
+    public interface ILxMessage
     {
-        Task<ILoxNETConnection> CreateConnectionAsync(Uri uri, CancellationToken token);
     }
 }

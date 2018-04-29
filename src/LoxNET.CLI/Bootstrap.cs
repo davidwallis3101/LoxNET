@@ -27,7 +27,7 @@ namespace LoxNET.CLI
         {
             var mquri = new Uri("amqp://rabbitmq:rabbitmq@127.0.0.1");
             var mqconf = RabbitMqConfiguration.With(
-                mquri, true, 5, "loxnet"
+                mquri, true, 5, "Lx"
             );
 
            _resolver = EventFlowOptions.New

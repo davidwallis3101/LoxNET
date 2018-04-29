@@ -25,21 +25,7 @@ using System;
 
 namespace LoxNET.Transport 
 {
-    public class LoxNETTransportConfiguration : ILoxNETTransportConfiguration
+    public interface ILxConnection
     {
-        public Uri Uri { get; }
-
-
-        public static ILoxNETTransportConfiguration With(Uri uri)
-        {
-            return new LoxNETTransportConfiguration(uri);
-        }
-
-        private LoxNETTransportConfiguration(Uri uri)
-        {
-            if (uri == null) throw new ArgumentNullException(nameof(uri));
-
-            Uri = uri;
-        }
     }
 }
