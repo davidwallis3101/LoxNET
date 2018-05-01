@@ -37,12 +37,12 @@ namespace LoxNET.Transport.Domain.Model.ClientModel.ValueObjects
         public PublicKey PublicKey { get; set; }
 
         public HostSettings(
-            string Hostname, 
+            string hostname, 
             int port, 
             string user, 
             string password)
         {
-            Hostname = new Hostname(Hostname);
+            Hostname = new Hostname(hostname);
             Port = new Port(port);
             User = new Username(user);
             Password = new Password(password);

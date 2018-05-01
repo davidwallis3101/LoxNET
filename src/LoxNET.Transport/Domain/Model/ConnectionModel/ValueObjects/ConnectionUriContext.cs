@@ -34,14 +34,14 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects
 
         public int Port { get; }
 
-        public ConnectionUriContext(string Hostname, int port)
+        public ConnectionUriContext(string hostname, int port)
         {
-            if (String.IsNullOrEmpty(Hostname)) 
-                throw new ArgumentNullException(nameof(Hostname));
+            if (String.IsNullOrEmpty(hostname)) 
+                throw new ArgumentNullException(nameof(hostname));
             if (port.Equals(0)) 
                 throw new ArgumentNullException(nameof(port));
 
-            Hostname = Hostname;
+            Hostname = hostname;
             Port = port;
         }
     }
