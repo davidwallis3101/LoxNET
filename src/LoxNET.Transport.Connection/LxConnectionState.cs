@@ -25,7 +25,12 @@ using System;
 
 namespace LoxNET.Transport 
 {
-    public interface ILxConnection
+    public enum LxConnectionState
     {
+        Closed,
+        CloseReceived,
+        CloseSent,
+        Connecting,
+        Open
     }
 }
