@@ -8,29 +8,38 @@ namespace LoxNET.Transport.Connection.Tests
 {
     public class LxHttpRequestTest
     {
+        private string _serverUri;
+
         [SetUp]
         public void Setup()
         {
+            _serverUri = "http://10.23.99.10";
         }
 
         [Test]
-        public async Task Test1()
+        public async Task TestRequest()
         {
-            try
+            UriBuilder builder = new UriBuilder(_serverUri);
+            //UriBuilder builder = new UriBuilder("http://testminiserver.loxone.com:7777");
+            using (var request = new LxHttpRequest(builder.Uri))
             {
-                var uri = new Uri("http://10.23.99.10");
-                var rq = new LoxNET.Transport.Connection.LxHttpRequest(uri);
-                var tk = new CancellationToken();
-                await rq.RequestAsync("jdev/cfg/api", tk).ConfigureAwait(false);
-                //using (var request = new ())
-                Assert.Pass();
-                //Assert.IsFalse(String.IsNullOrEmpty(result));
+                CancellationToken token = new CancellationToken();
+                string result = request.GetStringAsync("jdev/cfg/api", token).Result;
+                Assert.IsFalse(String.IsNullOrEmpty(result));
+            }            
+        }
 
-            }
-            catch (Exception ex)
+        [Test]
+        public async Task TestRequestFactory()
+        {
+            UriBuilder builder = new UriBuilder(_serverUri);
+            //UriBuilder builder = new UriBuilder("http://testminiserver.loxone.com:7777");
+            using (var request = new LxHttpRequest(builder.Uri))
             {
-                Console.WriteLine(ex.Message);
-            }
+                CancellationToken token = new CancellationToken();
+                string result = request.GetStringAsync("jdev/cfg/api", token).Result;
+                Assert.IsFalse(String.IsNullOrEmpty(result));
+            }            
         }
     }
 }

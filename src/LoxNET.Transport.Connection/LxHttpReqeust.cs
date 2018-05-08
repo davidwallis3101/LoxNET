@@ -7,8 +7,77 @@ using System.Net.Http.Headers;
 
 namespace LoxNET.Transport.Connection
 {
-    public class LxHttpRequest
+    public class LxHttpRequest : ILxHttpRequest, IDisposable
     {
+
+        /*
+        private static readonly HttpClient _httpClient = new HttpClient();
+        
+        public static async Task<string> Get(string url)
+        {
+            // The actual Get method
+            using (var result = await _httpClient.GetAsync(url))
+            {
+                string content = await result.Content.ReadAsStringAsync();
+                return content;
+            }
+        }
+         */
+
+        private Uri _uri;
+
+        private HttpClient _client;
+
+        public Uri BaseUri
+        {
+            get 
+            {
+                 return _uri;
+            }
+            set
+            {
+                _uri = value;
+            }
+        }
+
+        public LxHttpRequest(Uri uri)
+        {
+            _uri = uri;
+            _client = new HttpClient();
+        }
+
+        public async Task<byte[]> GetByteArrayAsync(string path, CancellationToken token)
+        {
+            using (var result = await new HttpClient().GetAsync(buildUri(path), token))
+            {
+                byte[] content = await result.Content.ReadAsByteArrayAsync();
+                return content;
+            }
+        }
+
+        public void Dispose()
+        {
+            _client.Dispose();
+            _client = null;
+        }
+
+        public async Task<string> GetStringAsync(string path, CancellationToken token)
+        {
+            using (var result = await _client.GetAsync(buildUri(path), token))
+            {
+                string content = await result.Content.ReadAsStringAsync();
+                return content;
+            }
+        }
+
+        private Uri buildUri(string path)
+        {
+            UriBuilder builder = new UriBuilder(_uri);
+            builder.Path = path;
+            return builder.Uri;            
+        }
+
+        /* 
         private Uri _uri;
 
         private String _mediaType;
@@ -19,13 +88,6 @@ namespace LoxNET.Transport.Connection
 
         private HttpClient _client;
 
-        public Uri Uri
-        {
-            get 
-            {
-                 return _uri;
-            }
-        }
 
         public String MediaType
         {
@@ -75,18 +137,15 @@ namespace LoxNET.Transport.Connection
         public async Task ResultAsync()
         {
 
-            if (_response.IsSuccessStatusCode == false)
-                throw new HttpRequestException("Response status: " + _response.StatusCode.ToString());
+            //if (_response.IsSuccessStatusCode == false)
+                //throw new HttpRequestException("Response status: " + _response.StatusCode.ToString());
 
             //if (!_response.Content.Headers.ContentType.Equals(_mediaType))
             //    throw new HttpRequestException("Expectet mediatype: " + _mediaType);
 
-            _result = await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
-        }
+            await Task.FromResult(0);
 
-        public async Task ReadStringAsync()
-        {
-
+            //_result = await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
         private void prepareClient(HttpClient client)
@@ -104,5 +163,6 @@ namespace LoxNET.Transport.Connection
                 token
             ).ConfigureAwait(false);
         }
+        */
     }
 }

@@ -6,7 +6,7 @@ namespace LoxNET.Common
     {
         public string Hostname { get; }
         public int Port { get; }
-        public string Username { get; }
+        public string UserName { get; }
         public string Password { get; }
 
         public static ILxConfiguration With(
@@ -29,10 +29,8 @@ namespace LoxNET.Common
 
             Hostname = hostname;
             Port = port;
-            Username = username;
+            UserName = username;
             Password = password;
         }
-                
     }
-
 }

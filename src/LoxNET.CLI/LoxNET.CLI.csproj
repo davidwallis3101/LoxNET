@@ -8,6 +8,7 @@
     <PackageReference Include="EventFlow" Version="0.57.3359" />
     <PackageReference Include="EventFlow.Autofac" Version="0.57.3359" />
     <PackageReference Include="EventFlow.RabbitMQ" Version="0.57.3359" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
