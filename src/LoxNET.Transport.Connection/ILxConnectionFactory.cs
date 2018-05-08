@@ -29,6 +29,6 @@ namespace LoxNET.Transport.Connection
 {
     public interface ILxConnectionFactory
     {
-        Task<ILxConnection> CreateConnectionAsync(Uri uri, CancellationToken token);
+        Task<ILxConnection> CreateConnectionAsync(CancellationToken token);
     }
 }

@@ -22,10 +22,58 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Net.WebSockets;
 
 namespace LoxNET.Transport.Connection 
 {
     public class LxConnection : ILxConnection
     {
+        private LxConnectionState _state;
+        private ClientWebSocketOptions _options;
+
+        private ClientWebSocket _socket;
+
+        public LxConnectionState State 
+        { 
+            get 
+            {
+                return _state;
+            } 
+        }
+        public ClientWebSocketOptions Options 
+        { 
+            get 
+            {
+                return _socket.Options;
+            }
+        }
+
+        public LxConnection()
+        {
+            _state = LxConnectionState.Closed;
+            _socket = new ClientWebSocket();
+        }
+
+        public async Task ConnectAsync(Uri uri, CancellationToken cancellationToken)
+        {
+
+        }
+
+        public async Task<ILxReceiveResult> ReceiveAsync(CancellationToken cancellationToken)
+        {
+            return new LxReceiveResult();
+        }
+
+        public async Task SendAsync(ILxSendContent content, CancellationToken cancellationToken)
+        {
+            
+        }
+
+        public async Task CloseAsync(string statusDescription, CancellationToken cancellationToken)
+        {
+            
+        }
     }
 }

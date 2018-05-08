@@ -22,16 +22,16 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Net.WebSockets;
 
 namespace LoxNET.Transport.Connection
 {
     public interface ILxConnection
     {
         LxConnectionState State { get; }
-
-        ILxConnectionOptions Options { get; }
 
         Task ConnectAsync(Uri uri, CancellationToken cancellationToken);
 

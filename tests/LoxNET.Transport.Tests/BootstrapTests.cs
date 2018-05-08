@@ -17,7 +17,7 @@ using EventFlow.RabbitMQ.Extensions;
 //using EventFlow.TestHelpers;
 using NUnit.Framework;
 
-namespace Tests
+namespace LoxNET.Transport.Tests
 {
     public class Tests
     {

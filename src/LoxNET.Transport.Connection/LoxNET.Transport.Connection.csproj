@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
-    <ProjectReference Include="..\LoxNET.Common\LoxNET.Common.csproj" />
+    <ProjectReference Include="..\LoxNET.Common\LoxNET.Common.csproj"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="EventFlow" Version="0.57.3359"/>
+  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
 </Project>

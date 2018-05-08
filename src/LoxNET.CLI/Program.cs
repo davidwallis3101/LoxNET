@@ -28,8 +28,11 @@ namespace LoxNET.CLI
 
             );*/
 
+
             var task = new TaskFactory().StartNew(
-                async () => await Setup().ConfigureAwait(false)
+                //async () => await Setup().ConfigureAwait(false)
+                async () => await Request().ConfigureAwait(false)
+                //)
             );
             while (!task.IsCompleted)
             {
@@ -47,6 +50,24 @@ namespace LoxNET.CLI
             await bootstrap.SetupAsync().ConfigureAwait(false);
             Console.WriteLine("LoxNET.CLI setup end");
 
+        }
+
+        static async Task Request()
+        {
+            var uri = new Uri("http://10.23.99.10");
+            var rq = new LoxNET.Transport.Connection.LxHttpRequest(uri);
+            var tk = new CancellationToken();
+            //Task t1 = rq.RequestAsync("jdev/cfg/api", tk);
+            //Task t2 = rq.ResultAsync();
+
+            Task[] tasks = new Task[2];
+            tasks[0] = rq.RequestAsync("jdev/cfg/api", tk);
+            tasks[1] = rq.ResultAsync();
+
+            await Task.WhenAll(tasks);
+
+            Console.WriteLine(rq.Result);
+            Console.WriteLine("LoxNET.CLI request end");
         }
     }
 }

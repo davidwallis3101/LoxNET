@@ -1,14 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
     <PackageReference Include="EventFlow" Version="0.57.3359"/>
     <PackageReference Include="EventFlow.Autofac" Version="0.57.3359"/>
     <PackageReference Include="EventFlow.RabbitMQ" Version="0.57.3359"/>
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\LoxNET.Transport.Connection\LoxNET.Transport.Connection.csproj"/>
-    <ProjectReference Include="..\LoxNET.Common\LoxNET.Common.csproj"/>
+    <ProjectReference Include="..\..\src\LoxNET.Transport.Connection\LoxNET.Transport.Connection.csproj" />
   </ItemGroup>
+
 </Project>
