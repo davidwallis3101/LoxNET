@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\LoxNET.Transport\LoxNET.Transport.csproj"/>
+    <ProjectReference Include="..\LoxNET.Common\LoxNET.Common.csproj" />
+    <ProjectReference Include="..\LoxNET.Transport\LoxNET.Transport.csproj" />
+    <ProjectReference Include="..\LoxNET.Transport.Connection\LoxNET.Transport.Connection.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EventFlow" Version="0.56.3328"/>
-    <PackageReference Include="EventFlow.Autofac" Version="0.56.3328"/>
-    <PackageReference Include="EventFlow.RabbitMQ" Version="0.56.3328"/>
+    <PackageReference Include="EventFlow" Version="0.56.3328" />
+    <PackageReference Include="EventFlow.Autofac" Version="0.56.3328" />
+    <PackageReference Include="EventFlow.RabbitMQ" Version="0.56.3328" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

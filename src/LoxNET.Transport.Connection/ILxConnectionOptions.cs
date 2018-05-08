@@ -23,7 +23,7 @@
 
 using System;
 
-namespace LoxNET.Transport 
+namespace LoxNET.Transport.Connection
 {
     public interface ILxConnectionOptions
     {

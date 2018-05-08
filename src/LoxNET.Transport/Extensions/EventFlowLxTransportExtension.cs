@@ -25,6 +25,8 @@
 using EventFlow;
 using EventFlow.Extensions;
 using EventFlow.Configuration;
+using LoxNET.Common;
+using LoxNET.Transport.Connection;
 //using EventFlow.Subscribers;
 
 namespace LoxNET.Transport.Extensions
@@ -33,7 +35,7 @@ namespace LoxNET.Transport.Extensions
     {
         public static IEventFlowOptions AddLxTransport(
             this IEventFlowOptions eventFlowOptions, 
-            ILxTransportConfiguration configuration)
+            ILxConfiguration configuration)
         {
             registerCommon(eventFlowOptions, configuration);
             registerServices(eventFlowOptions);
@@ -46,7 +48,7 @@ namespace LoxNET.Transport.Extensions
 
 
 
-        private static void registerCommon(IEventFlowOptions options, ILxTransportConfiguration configuration)
+        private static void registerCommon(IEventFlowOptions options, ILxConfiguration configuration)
         {
             options.RegisterServices(sr => 
             {

@@ -24,20 +24,19 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using EventFlow.Logs;
+using LoxNET.Common;
 
-namespace LoxNET.Transport 
+namespace LoxNET.Transport.Connection
 {
     public class LxConnectionFactory : ILxConnectionFactory
     {
-        private readonly ILog _log;
+        private readonly ILxConfiguration _configuration;
+        private readonly ILxLog _log;
 
-        private readonly ILxTransportConfiguration _configuration;
-
-        public LxConnectionFactory(ILog log, ILxTransportConfiguration configuration)
+        public LxConnectionFactory(ILxConfiguration configuration, ILxLog log)
         {
-            _log = log;
             _configuration = configuration;
+            _log = log;
         }
 
         public async Task<ILxConnection> CreateConnectionAsync(Uri uri, CancellationToken token)
