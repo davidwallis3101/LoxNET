@@ -1,0 +1,25 @@
+{
+  "name": "loxnet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "A CQRS+ES Loxone Client.",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serialize/LoxNET.git"
+  },
+  "author": { 
+    "name": "Frank Binder",
+    "email": "dev@serialize.de" 
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serialize/LoxNET/issues"
+  },
+  "homepage": "https://github.com/serialize/LoxNET#readme"
+}
