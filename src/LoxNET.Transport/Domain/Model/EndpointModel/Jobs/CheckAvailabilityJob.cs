@@ -19,32 +19,35 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EventFlow.Commands;
-using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
+using EventFlow.Configuration;
+using LoxNET.Transport.Domain.Services;
+using EventFlow.Exceptions;
+using EventFlow.Jobs;
+using EventFlow.Queries;
 
-namespace LoxNET.Transport.Domain.Model.InitModel.Commands
+namespace LoxNET.Transport.Domain.Model.EndpointModel.Jobs
 {
-    public class InitCheckCommand : Command<InitAggregate, InitId>
+    public class CheckAvailabilityJob : IJob
     {
-        public InitCheckCommand(InitId id) : base(id)
+        public CheckAvailabilityJob(
+            EndpointId id)
         {
+            EndpointId = id;
         }
-    }
 
-    public class InitCheckCommandHandler : CommandHandler<InitAggregate, InitId, InitCheckCommand>
-    {
-        public override Task ExecuteAsync(
-            InitAggregate aggregate, 
-            InitCheckCommand command, 
-            CancellationToken cancellationToken)
+        public EndpointId EndpointId { get; }
+
+        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            //aggregate.Authenticate(command.Credentials);
-            return Task.FromResult(0);
+            var queryProcessor = resolver.Resolve<IQueryProcessor>();
+            var jobScheduler = resolver.Resolve<IJobScheduler>();
+
+            await Task.FromResult(0);
         }
-        
     }
 }

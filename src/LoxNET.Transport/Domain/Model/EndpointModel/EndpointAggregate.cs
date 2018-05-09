@@ -22,16 +22,32 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Aggregates;
-using EventFlow.EventStores;
-using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
+using EventFlow.Extensions;
+using LoxNET.Transport.Domain.Model.ClientModel.Events;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.InitModel.Events
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
-    [EventVersion("InitKey", 1)]
-    public class InitKeyEvent : AggregateEvent<InitAggregate, InitId>
+    public class ClientAggregate : AggregateRoot<ClientAggregate, ClientId>
     {
-        public InitKeyEvent()
+        private readonly ClientState _state = new ClientState();
+
+        public ClientAggregate(ClientId id) : base(id)
         {
+            Register(_state);
+        }
+        public void Initialize(Endpoint endpoint, Credentials credentials)
+        {
+            Emit(new ClientInitializedEvent(endpoint, credentials));
+        }
+
+        public void Connect(Endpoint endpoint)
+        {
+            Emit(new ClientConnectedEvent(endpoint));
+        }
+        public void Authenticate(Credentials credentials)
+        {
+            Emit(new ClientAuthenticatedEvent(credentials));
         }
     }
 }

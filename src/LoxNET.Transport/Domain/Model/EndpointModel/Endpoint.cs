@@ -21,30 +21,22 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using EventFlow.Configuration;
-using LoxNET.Transport.Domain.Model.InitModel.Commands;
-using LoxNET.Transport.Domain.Services;
-using EventFlow.Exceptions;
-using EventFlow.Jobs;
-using EventFlow.Queries;
+using EventFlow.Entities;
+using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.InitModel.Jobs
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
-    public class InitConnectJob : IJob
+    public class Client : Entity<ClientId>
     {
-        public InitConnectJob(InitId id)
+        public Endpoint Endpoint { get; set; }
+
+        public Credentials Credentials { get; set; }
+
+        public Client(
+            ClientId id)
+            : base(id)
         {
-            InitId = id;
         }
 
-        public InitId InitId { get; }
-
-        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
-        {
-            await Task.FromResult(0);
-        }
     }
 }

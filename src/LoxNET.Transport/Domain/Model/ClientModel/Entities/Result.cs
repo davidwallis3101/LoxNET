@@ -19,32 +19,25 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EventFlow.Configuration;
-using LoxNET.Transport.Domain.Model.InitModel.Commands;
-using LoxNET.Transport.Domain.Services;
-using EventFlow.Exceptions;
-using EventFlow.Jobs;
-using EventFlow.Queries;
+using Newtonsoft.Json;
 
-namespace LoxNET.Transport.Domain.Model.InitModel.Jobs
+namespace LoxNET.Transport.Domain.Model.ClientModel.Entities
 {
-    public class InitCheckJob : IJob
+    [JsonObject]
+    public class ResultRoot
     {
-        public InitCheckJob(InitId id)
-        {
-            InitId = id;
-        }
+        
+        [JsonProperty("Code")]
+        public int Status { get; set; }
 
-        public InitId InitId { get; }
+        [JsonProperty("control")]
+        public string Context { get; set; }
 
-        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
-        {
-            await Task.FromResult(0);
-        }
+        [JsonProperty("value")]
+        public string Content { get; set; }
     }
 }

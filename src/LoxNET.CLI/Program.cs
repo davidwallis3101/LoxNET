@@ -12,8 +12,10 @@ using LoxNET.Configuration;
 using LoxNET.Transport.Domain.Services;
 using LoxNET.Transport.Domain.Model.ClientModel;
 using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.ClientModel.Entities;
 using EventFlow.Extensions;
 using EventFlow.Logs;
+using LoxNET.Serialization;
 
 namespace LoxNET.CLI
 {
@@ -22,11 +24,11 @@ namespace LoxNET.CLI
 
         static void Main(string[] args)
         {
-            LxConfigurationBoot.Setup();
-
-
-
             Console.WriteLine("LoxNET.CLI start");
+            LxSettingsFactory.Init();
+
+            Console.WriteLine(LxConfiguration.MiniServer.HostName);
+                        
             //string uri = "http://10.23.99.10/jdev/cfg/api";
             UriBuilder builder = new UriBuilder("http://10.23.99.10");
             using (var request = new LxHttpRequest(builder.Uri))
@@ -34,6 +36,8 @@ namespace LoxNET.CLI
                 CancellationToken token = new CancellationToken();
                 string result = request.GetStringAsync("jdev/cfg/api", token).Result;
                 Console.WriteLine(result);
+
+                var res = ResultConverter.Deserialize(result);
             }            
             Console.WriteLine("LoxNET.CLI end");
         }

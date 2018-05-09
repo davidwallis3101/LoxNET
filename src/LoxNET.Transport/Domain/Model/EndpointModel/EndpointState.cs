@@ -22,16 +22,29 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Aggregates;
-using EventFlow.EventStores;
-using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
+using EventFlow.Extensions;
+using LoxNET.Transport.Domain.Model.EndpointModel.Events;
+using LoxNET.Transport.Domain.Model.EndpointModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.InitModel.Events
+namespace LoxNET.Transport.Domain.Model.EndpointModel
 {
-    [EventVersion("InitAuth", 1)]
-    public class InitAuthEvent : AggregateEvent<InitAggregate, InitId>
+    public class EndpointState : AggregateState<EndpointAggregate, EndpointId, EndpointState>,
+        IApply<EndpointInitializedEvent>,
+        IApply<EndpointConnectedEvent>
     {
-        public InitAuthEvent()
+
+        public Endpoint Endpoint { get; private set; }
+        public Credentials Credentials { get; private set; }
+
+        public void Apply(EndpointInitializedEvent evt)
         {
+            Endpoint = evt.Endpoint;
+            Credentials = evt.Credentials;
+            
+        }
+        public void Apply(EndpointConnectedEvent evt)
+        {
+            
         }
     }
 }

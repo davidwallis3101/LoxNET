@@ -19,18 +19,25 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Core;
-using EventFlow.ValueObjects;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace LoxNET.Transport.Domain.Model.InitModel
+namespace LoxNET.Serialization
 {
-    public class InitId : Identity<InitId>
+    [JsonObject]
+    public class ResultModel
     {
-        public InitId(string value) : base(value)
-        {
-            
-        }
+        
+        [JsonProperty("Code")]
+        public int Status { get; set; }
+
+        [JsonProperty("control")]
+        public string Context { get; set; }
+
+        [JsonProperty("value")]
+        public string Content { get; set; }
     }
 }

@@ -21,28 +21,16 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNET.Transport.Domain.Model.InitModel.Events;
-using LoxNET.Transport.Domain.Model.InitModel.ValueObjects;
+using EventFlow.Core;
+using EventFlow.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.InitModel
+namespace LoxNET.Transport.Domain.Model.ClientModel
 {
-    public class InitState : AggregateState<InitAggregate, InitId, InitState>,
-        IApply<InitCheckEvent>,
-        IApply<InitConnectEvent>
+    public class ClientId : Identity<ClientId>
     {
-        public void Apply(InitCheckEvent evt)
+        public ClientId(string value) : base(value)
         {
-        }
-        public void Apply(InitConnectEvent evt)
-        {
-        }
-        public void Apply(InitKeyEvent evt)
-        {
-        }
-        public void Apply(InitAuthEvent evt)
-        {
+            
         }
     }
 }
