@@ -22,18 +22,18 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Entities;
-using LoxNET.Transport.Domain.Model.ClientModel.ValueObjects;
+using LoxNET.Transport.Domain.Model.EndpointModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel
+namespace LoxNET.Transport.Domain.Model.EndpointModel
 {
-    public class Client : Entity<ClientId>
+    public class Endpoint : Entity<EndpointId>
     {
         public Endpoint Endpoint { get; set; }
 
         public Credentials Credentials { get; set; }
 
-        public Client(
-            ClientId id)
+        public Endpoint(
+            EndpointId id)
             : base(id)
         {
         }

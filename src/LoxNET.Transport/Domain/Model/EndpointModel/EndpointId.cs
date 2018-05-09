@@ -24,11 +24,11 @@
 using EventFlow.Core;
 using EventFlow.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ClientModel
+namespace LoxNET.Transport.Domain.Model.EndpointModel
 {
-    public class ClientId : Identity<ClientId>
+    public class EndpointId : Identity<EndpointId>
     {
-        public ClientId(string value) : base(value)
+        public EndpointId(string value) : base(value)
         {
             
         }
