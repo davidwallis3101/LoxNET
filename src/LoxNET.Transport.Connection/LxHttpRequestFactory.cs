@@ -25,6 +25,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using LoxNET.Common;
+using LoxNET.Configuration;
 using EventFlow;
 using EventFlow.Logs;
 using EventFlow.Configuration;
@@ -44,22 +45,18 @@ namespace LoxNET.Transport.Connection
 
         public async Task<ILxHttpRequest> CreateAsync(CancellationToken token)
         {
-            return await Task.FromResult<ILxHttpRequest>(create()); 
-        }
-
-        private ILxHttpRequest create()
-        {
             UriBuilder builder = new UriBuilder(
                 "http", 
-                _configuration.Hostname,
-                _configuration.Port
+                _configuration.MiniServer.HostName,
+                _configuration.MiniServer.Port
             );
 
-            builder.UserName = _configuration.UserName;
-            builder.Password = _configuration.Password;
+            builder.UserName = _configuration.MiniServer.UserName;
+            builder.Password = _configuration.MiniServer.Password;
 
             var request = new LxHttpRequest(builder.Uri);
-            return request;
+
+            return await Task.FromResult<ILxHttpRequest>(request); 
         }
     }
 }

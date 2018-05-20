@@ -24,11 +24,12 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using LoxNET.Configuration;
 
 namespace LoxNET.Transport.Connection
 {
     public interface ILxHttpRequestFactory
     {
-        Task<ILxHttpRequest> CreateAsync(Uri uri, CancellationToken token);
+        Task<ILxHttpRequest> CreateAsync(CancellationToken token);
     }
 }

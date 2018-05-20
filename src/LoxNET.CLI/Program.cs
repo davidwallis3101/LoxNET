@@ -8,6 +8,7 @@ using EventFlow.Configuration;
 using EventFlow.Core;
 using LoxNET.Transport;
 using LoxNET.Transport.Connection;
+using LoxNET.Common;
 using LoxNET.Configuration;
 using LoxNET.Transport.Domain.Services;
 using LoxNET.Transport.Domain.Model.ClientModel;
@@ -25,9 +26,9 @@ namespace LoxNET.CLI
         static void Main(string[] args)
         {
             Console.WriteLine("LoxNET.CLI start");
-            LxSettingsFactory.Init();
+            LxSettingsFactory.Configure();
 
-            Console.WriteLine(LxConfiguration.MiniServer.HostName);
+            Console.WriteLine(LxConfigurationProvider.Config.MiniServer.HostName);
                         
             //string uri = "http://10.23.99.10/jdev/cfg/api";
             UriBuilder builder = new UriBuilder("http://10.23.99.10");

@@ -10,6 +10,8 @@ namespace LoxNET.Configuration
 {
     public class LxConfigurationProvider : ILxConfigurationProvider
     {
+        public static readonly ILxConfiguration Config = new LxConfiguration();
+
         private IConfigurationRoot configRoot; 
 
         public IConfigurationSection MiniServerSection 
@@ -47,11 +49,9 @@ namespace LoxNET.Configuration
 
             configRoot = builder.Build();
 
-            MiniServerSection.Bind(
-                LxConfiguration.MiniServer);
+            MiniServerSection.Bind(Config.MiniServer);
 
-            EventFlowSection.Bind(
-                LxConfiguration.EventFlow);
+            EventFlowSection.Bind(Config.EventFlow);
 
         } 
 

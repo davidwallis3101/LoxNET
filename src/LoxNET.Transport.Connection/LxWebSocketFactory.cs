@@ -25,6 +25,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using LoxNET.Common;
+using LoxNET.Configuration;
 using EventFlow;
 using EventFlow.Logs;
 using EventFlow.Configuration;
