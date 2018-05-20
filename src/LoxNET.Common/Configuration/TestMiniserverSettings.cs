@@ -2,12 +2,12 @@ namespace LoxNET.Configuration
 {
     public class TestMiniserverSettings : EndpointSettings
     {
-        public TestMiniserverSettings(): base(
-            "testminiserver.loxone.com", 
-            7777, 
-            "Web", 
-            "Web"
-        ){
+        public TestMiniserverSettings()
+        {
+            HostName = "testminiserver.loxone.com"; 
+            Port = 7777; 
+            UserName = "Web"; 
+            Password = "Web";
         }
     }
 }
