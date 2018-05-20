@@ -21,53 +21,35 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
-using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Configuration;
+using LoxNET.Transport.Domain.Model.ConnectionModel.Commands;
+using LoxNET.Transport.Domain.Services;
+using EventFlow;
+using EventFlow.Exceptions;
+using EventFlow.Jobs;
+using EventFlow.Queries;
 
-namespace LoxNET.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
 {
-    public class ConnectionAggregate : AggregateRoot<ConnectionAggregate, ConnectionId>
+    public class InitializeConnectionJob : IJob
     {
-        private readonly ConnectionState _state = new ConnectionState();
-
-        public ConnectionAggregate(ConnectionId id) : base(id)
+        public InitializeConnectionJob(
+            ConnectionId id)
         {
-            Register(_state);
+            ConnectionId = id;
         }
 
+        public ConnectionId ConnectionId { get; }
 
-        public void Initialized(EndpointContext endpoint)
+        public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
-            Emit(new ConnectionInitializedEvent(endpoint));
-        }
+            var commandBus = resolver.Resolve<ICommandBus>();
 
 
-        public void Open(ConnectionUriContext uri)
-        {
-            Emit(new ConnectionOpenedEvent(uri));
-
-        }
-
-        public void Send(ConnectionSentContext param)
-        {
-            Emit(new ConnectionSentEvent(param));
-        }
-
-        public void StateChanged(ConnectionStateContext state)
-        {
-            Emit(new ConnectionChangedEvent(state));
-        }
-
-        public void Received(ConnectionReceivedContext message)
-        {
-            Emit(new ConnectionReceivedEvent(message));
-        }
-
-        public void Closed()
-        {
-            Emit(new ConnectionClosedEvent());
+            await commandBus.PublishAsync(new ConnectionInitializedCommand(ConnectionId, null), cancellationToken).ConfigureAwait(false);
         }
     }
 }

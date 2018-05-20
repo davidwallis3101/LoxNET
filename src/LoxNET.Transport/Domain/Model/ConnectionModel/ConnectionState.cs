@@ -30,11 +30,14 @@ using LoxNET.Transport.Domain.Model.ConnectionModel.Enums;
 namespace LoxNET.Transport.Domain.Model.ConnectionModel
 {
     public class ConnectionState : AggregateState<ConnectionAggregate, ConnectionId, ConnectionState>,
+        IApply<EndpointAvailableEvent>,
         IApply<ConnectionOpenedEvent>,
         IApply<ConnectionClosedEvent>,
         IApply<ConnectionChangedEvent>,
         IApply<ConnectionReceivedEvent>
     {
+        public EndpointContext Endpoint { get; set; }
+
         public ConnectionUriContext Uri { get; set; }
 
         public ConnectionStateContext State  { get; set; }
@@ -43,6 +46,11 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel
         public ConnectionState()
         {
             State = new ConnectionStateContext(ConnectionStateEnum.Closed);
+        }
+
+        public void Apply(EndpointAvailableEvent evt)
+        {
+            Endpoint = evt.Endpoint;
         }
 
         public void Apply(ConnectionOpenedEvent evt)

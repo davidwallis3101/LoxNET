@@ -60,8 +60,8 @@ namespace LoxNET.Transport.Extensions
         {
             options.RegisterServices(sr => 
             {
-                sr.Register<ILxConnectionFactory, LxConnectionFactory>(Lifetime.Singleton);
-                sr.Register<ILxConnection, LxConnection>(Lifetime.Singleton);
+                sr.Register<ILxWebSocketFactory, LxWebSocketFactory>(Lifetime.Singleton);
+                sr.Register<ILxWebSocket, LxWebSocket>(Lifetime.Singleton);
                 sr.Register<ILxMessageFactory, LxMessageFactory>(Lifetime.Singleton);
                 sr.Register<ILxMessage, LxMessage>(Lifetime.Singleton);
             });

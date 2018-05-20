@@ -21,53 +21,34 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
-using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
+using System;
+using System.Collections.Generic;
+using EventFlow.Core;
+using EventFlow.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects
 {
-    public class ConnectionAggregate : AggregateRoot<ConnectionAggregate, ConnectionId>
+    public class EndpointContext : ValueObject
     {
-        private readonly ConnectionState _state = new ConnectionState();
+        public string Hostname { get; }
 
-        public ConnectionAggregate(ConnectionId id) : base(id)
+        public int Port { get; }
+
+        public string Api { get; }
+        
+        public string Serial { get; }
+
+        public EndpointContext(string hostname, int port, string api, string serial)
         {
-            Register(_state);
-        }
+            if (String.IsNullOrEmpty(hostname)) 
+                throw new ArgumentNullException(nameof(hostname));
+            if (port.Equals(0)) 
+                throw new ArgumentNullException(nameof(port));
 
-
-        public void Initialized(EndpointContext endpoint)
-        {
-            Emit(new ConnectionInitializedEvent(endpoint));
-        }
-
-
-        public void Open(ConnectionUriContext uri)
-        {
-            Emit(new ConnectionOpenedEvent(uri));
-
-        }
-
-        public void Send(ConnectionSentContext param)
-        {
-            Emit(new ConnectionSentEvent(param));
-        }
-
-        public void StateChanged(ConnectionStateContext state)
-        {
-            Emit(new ConnectionChangedEvent(state));
-        }
-
-        public void Received(ConnectionReceivedContext message)
-        {
-            Emit(new ConnectionReceivedEvent(message));
-        }
-
-        public void Closed()
-        {
-            Emit(new ConnectionClosedEvent());
+            Hostname = hostname;
+            Port = port;
+            Api = api;
+            Serial = serial;
         }
     }
 }

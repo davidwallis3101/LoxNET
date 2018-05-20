@@ -22,52 +22,18 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
+using EventFlow.EventStores;
 using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Events
 {
-    public class ConnectionAggregate : AggregateRoot<ConnectionAggregate, ConnectionId>
+    [EventVersion("ConnectionInitialized", 1)]
+    public class ConnectionInitializedEvent : AggregateEvent<ConnectionAggregate, ConnectionId>
     {
-        private readonly ConnectionState _state = new ConnectionState();
-
-        public ConnectionAggregate(ConnectionId id) : base(id)
+        public EndpointContext Endpoint { get; }
+        public ConnectionInitializedEvent(EndpointContext endpoint)
         {
-            Register(_state);
-        }
-
-
-        public void Initialized(EndpointContext endpoint)
-        {
-            Emit(new ConnectionInitializedEvent(endpoint));
-        }
-
-
-        public void Open(ConnectionUriContext uri)
-        {
-            Emit(new ConnectionOpenedEvent(uri));
-
-        }
-
-        public void Send(ConnectionSentContext param)
-        {
-            Emit(new ConnectionSentEvent(param));
-        }
-
-        public void StateChanged(ConnectionStateContext state)
-        {
-            Emit(new ConnectionChangedEvent(state));
-        }
-
-        public void Received(ConnectionReceivedContext message)
-        {
-            Emit(new ConnectionReceivedEvent(message));
-        }
-
-        public void Closed()
-        {
-            Emit(new ConnectionClosedEvent());
+            Endpoint = endpoint;
         }
     }
 }

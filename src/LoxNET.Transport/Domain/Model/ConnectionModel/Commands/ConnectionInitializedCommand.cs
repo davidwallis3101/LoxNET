@@ -19,55 +19,32 @@
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// SocketION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using EventFlow.Aggregates;
-using EventFlow.Extensions;
-using LoxNET.Transport.Domain.Model.ConnectionModel.Events;
+using System.Threading;
+using System.Threading.Tasks;
+using EventFlow.Commands;
 using LoxNET.Transport.Domain.Model.ConnectionModel.ValueObjects;
 
-namespace LoxNET.Transport.Domain.Model.ConnectionModel
+namespace LoxNET.Transport.Domain.Model.ConnectionModel.Commands
 {
-    public class ConnectionAggregate : AggregateRoot<ConnectionAggregate, ConnectionId>
+    public class ConnectionInitializedCommand : Command<ConnectionAggregate, ConnectionId>
     {
-        private readonly ConnectionState _state = new ConnectionState();
+        public EndpointContext Endpoint { get; }
 
-        public ConnectionAggregate(ConnectionId id) : base(id)
+        public ConnectionInitializedCommand(ConnectionId id, EndpointContext endpoint) : base(id)
         {
-            Register(_state);
+            Endpoint = endpoint;
         }
+    }
 
-
-        public void Initialized(EndpointContext endpoint)
+    public class ConnectionInitializedCommandHandler : CommandHandler<ConnectionAggregate, ConnectionId, ConnectionInitializedCommand>
+    {
+        public override Task ExecuteAsync(ConnectionAggregate aggregate, ConnectionInitializedCommand command, CancellationToken cancellationToken)
         {
-            Emit(new ConnectionInitializedEvent(endpoint));
+            aggregate.Initialized(command.Endpoint);
+            return Task.FromResult(0);
         }
-
-
-        public void Open(ConnectionUriContext uri)
-        {
-            Emit(new ConnectionOpenedEvent(uri));
-
-        }
-
-        public void Send(ConnectionSentContext param)
-        {
-            Emit(new ConnectionSentEvent(param));
-        }
-
-        public void StateChanged(ConnectionStateContext state)
-        {
-            Emit(new ConnectionChangedEvent(state));
-        }
-
-        public void Received(ConnectionReceivedContext message)
-        {
-            Emit(new ConnectionReceivedEvent(message));
-        }
-
-        public void Closed()
-        {
-            Emit(new ConnectionClosedEvent());
-        }
+        
     }
 }
