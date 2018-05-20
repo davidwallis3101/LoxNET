@@ -27,14 +27,14 @@ using System.Threading.Tasks;
 
 namespace LoxNET.Transport.Connection
 {
-    public interface ILxHttpRequest
+    public interface ILxHttpRequestHandler
     {
-        Uri BaseUri { get; set; }
+    }
 
-        string Path { get; set; }
-
-        Task<byte[]> GetByteArrayAsync(string path, CancellationToken token);
-
-        Task<string> GetStringAsync(string path, CancellationToken token);
+    public interface ILxHttpRequestHandler<TRequest, TResult> : ILxHttpRequestHandler
+        where TRequest : ILxHttpRequest
+        where TResult : ILxHttpResult
+    {
+        Task<TResult> ExecuteRequestAsync(TRequest request, CancellationToken token);
     }
 }
