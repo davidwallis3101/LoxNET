@@ -24,6 +24,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using LoxNET.Configuration;
 
 namespace LoxNET.Transport.Connection
 {

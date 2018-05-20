@@ -1,13 +1,15 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using NUnit.Framework;
+//using NUnit.Framework;
 using LoxNET.Transport.Connection;
 
 namespace LoxNET.Transport.Connection.Tests
 {
     public class LxHttpRequestTest
     {
+        /* 
+
         private string _serverUri;
 
         [SetUp]
@@ -41,5 +43,6 @@ namespace LoxNET.Transport.Connection.Tests
                 Assert.IsFalse(String.IsNullOrEmpty(result));
             }            
         }
+        */
     }
 }

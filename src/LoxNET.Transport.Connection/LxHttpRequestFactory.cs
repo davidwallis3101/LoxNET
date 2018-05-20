@@ -63,15 +63,16 @@ namespace LoxNET.Transport.Connection
         {
             UriBuilder builder = new UriBuilder(
                 "http", 
-                _configuration.Hostname,
-                _configuration.Port
+                _configuration.MiniServer.HostName,
+                _configuration.MiniServer.Port
             );
 
-            builder.UserName = _configuration.UserName;
-            builder.Password = _configuration.Password;
+            builder.UserName = _configuration.MiniServer.UserName;
+            builder.Password = _configuration.MiniServer.Password;
 
             var request = new LxHttpRequest(builder.Uri);
-            return request;
+
+            return request; 
         }
     }
 }

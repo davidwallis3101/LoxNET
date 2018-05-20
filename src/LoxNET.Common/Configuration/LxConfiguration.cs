@@ -10,13 +10,15 @@ namespace LoxNET.Configuration
         //public static IConfiguration Configuration { get; set; }
         private IEndpointSettings _epSettings = new EndpointSettings();
         private IEventFlowSettings _efSettings = new EventFlowSettings();
-        public IEndpointSettings MiniServer { 
+        public IEndpointSettings MiniServer 
+        { 
             get
             {
                 return _epSettings;
             } 
         }
-        public IEventFlowSettings EventFlow { 
+        public IEventFlowSettings EventFlow 
+        { 
             get
             {
                 return _efSettings;

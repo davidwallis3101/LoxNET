@@ -1,3 +1,5 @@
+using System;
+
 namespace LoxNET.Configuration
 {
     public class EventFlowSettings : IEventFlowSettings

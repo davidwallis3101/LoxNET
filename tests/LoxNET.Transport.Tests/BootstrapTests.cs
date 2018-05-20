@@ -21,6 +21,7 @@ namespace LoxNET.Transport.Tests
 {
     public class Tests
     {
+        /* 
         private IRootResolver _resolver;
         private IAggregateStore _aggregateStore;
         private ICommandBus _commandBus;
@@ -103,7 +104,7 @@ namespace LoxNET.Transport.Tests
                 CancellationToken.None)
                 .ConfigureAwait(false);
         }
-
+        */
 
     }
 }

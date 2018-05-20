@@ -10,8 +10,7 @@ namespace LoxNET.Configuration
 {
     public class LxConfigurationProvider : ILxConfigurationProvider
     {
-        public static LxConfiguration Config = new LxConfiguration();
-
+        public static readonly LxConfiguration Config = new LxConfiguration();
         private IConfigurationRoot configRoot; 
 
         public IConfigurationSection MiniServerSection 
@@ -60,7 +59,6 @@ namespace LoxNET.Configuration
             if (efSection == null)
                 throw new NullReferenceException(efKey);
             efSection.Bind(Config.EventFlow);
-
         } 
 
         public virtual void Prepare(IConfigurationBuilder builder)
