@@ -10,7 +10,8 @@ namespace LoxNET.Configuration
 {
     public interface ILxConfigurationProvider
     {
-        void Build();
+        //void Build();
+        void Prepare(IConfigurationBuilder builder);
     }
 }
 

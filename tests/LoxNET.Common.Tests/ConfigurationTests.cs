@@ -8,19 +8,27 @@ namespace LoxNET.Common.Tests
     
     public class ConfigurationTests
     {
-        private readonly LxConfiguration config;
+        private LxConfiguration config;
 
         public ConfigurationTests()
         {
+            //AppSettingsProvider.Configure();
+            //new AppSettingsProvider().Build();
+
+            /*
             var provider = new LxConfigurationProvider();
             provider.Build();
+            */
         }
 
         [Fact]
         public void HostnameIsNull()
         {
-
-            Assert.False(config.MiniServer.HostName != null);
+            var factory = new LxSettingsFactory();
+            factory.Register(new TestConfigProvider());
+            var config = factory.Configure();
+            
+            Assert.Equal(config.MiniServer.HostName, "testminiserver.loxone.com");
         }
     }
 }

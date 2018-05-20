@@ -10,12 +10,7 @@ namespace LoxNET.Configuration
 {
     public class AppSettingsProvider : LxConfigurationProvider
     {
-        public static void Configure()
-        {
-            new AppSettingsProvider().Build();
-        }
-
-        public override void Prepare(IConfigurationBuilder builder)
+        public void Prepare(IConfigurationBuilder builder)
         {
             string fn = "appsettings.sample.json";
             if (File.Exists(fn))
