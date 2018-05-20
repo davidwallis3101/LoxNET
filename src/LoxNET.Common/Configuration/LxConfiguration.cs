@@ -8,11 +8,11 @@ namespace LoxNET.Configuration
     public class LxConfiguration
     {
         //public static IConfiguration Configuration { get; set; }
-        public static MiniserverSettings MiniServer { get; set; }
-        public static EventFlowSettings EventFlow { get; set; }
+        public static IEndpointSettings MiniServer { get; private set; }
+        public static EventFlowSettings EventFlow { get; private set; }
 
         public static void Assign(
-            MiniserverSettings miniserver,
+            IEndpointSettings miniserver,
             EventFlowSettings eventflow)
         {
             MiniServer = miniserver;

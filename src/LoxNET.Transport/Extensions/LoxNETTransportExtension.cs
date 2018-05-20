@@ -31,7 +31,7 @@ using LoxNET.Transport.Connection;
 
 namespace LoxNET.Transport.Extensions
 {
-    public static class EventFlowLxTransportExtension
+    public static class LoxNETTransportExtension
     {
         public static IEventFlowOptions AddLxTransport(
             this IEventFlowOptions eventFlowOptions, 

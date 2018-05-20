@@ -35,7 +35,7 @@ namespace LoxNET.Configuration
         private static void initSettings()
         {
             LxConfiguration.Assign(
-                new MiniserverSettings(),
+                new TestMiniserverSettings(),
                 new EventFlowSettings()
             );
         }
