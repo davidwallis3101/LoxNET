@@ -53,7 +53,7 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
             var requestFactory = resolver.Resolve<ILxHttpRequestFactory>();
             //var websocketFactory = resolver.Resolve<ILxWebSocketFactory>();
 
-            var miniServerCfg = LxConfiguration.MiniServer;
+            var miniServerCfg = LxConfigurationProvider.Config.MiniServer;
             UriBuilder builder = new UriBuilder(
                 "http", 
                 miniServerCfg.HostName,
@@ -62,7 +62,7 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
             builder.UserName = miniServerCfg.UserName;
             builder.Password = miniServerCfg.Password;
 
-            var request = await requestFactory.CreateAsync(builder.Uri,
+            var request = await requestFactory.CreateAsync(
                 cancellationToken).ConfigureAwait(false);
 
             var result = await request.GetStringAsync("jdev/cfg/api", 

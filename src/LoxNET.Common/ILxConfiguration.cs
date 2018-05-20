@@ -2,7 +2,7 @@
 
 namespace LoxNET.Common
 {
-    public interface ILxConfiguration
+    public interface ILxConfiguration2
     {
         string Hostname { get; }
 
