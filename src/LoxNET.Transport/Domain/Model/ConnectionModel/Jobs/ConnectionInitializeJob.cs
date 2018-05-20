@@ -24,6 +24,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
 using EventFlow.Configuration;
 using LoxNET.Transport.Domain.Model.ConnectionModel.Commands;
 using LoxNET.Transport.Domain.Services;
@@ -31,6 +32,8 @@ using EventFlow;
 using EventFlow.Exceptions;
 using EventFlow.Jobs;
 using EventFlow.Queries;
+using LoxNET.Configuration;
+using LoxNET.Transport.Connection;
 
 namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
 {
@@ -47,6 +50,23 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
         public async Task ExecuteAsync(IResolver resolver, CancellationToken cancellationToken)
         {
             var commandBus = resolver.Resolve<ICommandBus>();
+            var requestFactory = resolver.Resolve<ILxHttpRequestFactory>();
+            //var websocketFactory = resolver.Resolve<ILxWebSocketFactory>();
+
+            var miniServerCfg = LxConfiguration.MiniServer;
+            UriBuilder builder = new UriBuilder(
+                "http", 
+                miniServerCfg.HostName,
+                miniServerCfg.Port
+            );
+            builder.UserName = miniServerCfg.UserName;
+            builder.Password = miniServerCfg.Password;
+
+            var request = await requestFactory.CreateAsync(builder.Uri,
+                cancellationToken).ConfigureAwait(false);
+
+            var result = await request.GetStringAsync("jdev/cfg/api", 
+                cancellationToken).ConfigureAwait(false);
 
 
             await commandBus.PublishAsync(new ConnectionInitializedCommand(ConnectionId, null), cancellationToken).ConfigureAwait(false);
