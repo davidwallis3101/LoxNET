@@ -27,8 +27,8 @@ using System.Threading.Tasks;
 
 namespace LoxNET.Transport.Connection
 {
-    public interface ILxConnectionFactory
+    public interface ILxWebSocketFactory
     {
-        Task<ILxConnection> CreateConnectionAsync(CancellationToken token);
+        Task<ILxWebSocket> CreateConnectionAsync(CancellationToken token);
     }
 }

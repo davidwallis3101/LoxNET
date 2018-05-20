@@ -25,7 +25,7 @@ using System;
 
 namespace LoxNET.Transport.Connection
 {
-    public interface ILxConnectionOptions
+    public interface ILxWebSocketOptions
     {
     }
 }

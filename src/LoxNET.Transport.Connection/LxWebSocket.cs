@@ -28,14 +28,14 @@ using System.Net.WebSockets;
 
 namespace LoxNET.Transport.Connection 
 {
-    public class LxConnection : ILxConnection
+    public class LxWebSocket : ILxWebSocket
     {
-        private LxConnectionState _state;
+        private LxWebSocketState _state;
         private ClientWebSocketOptions _options;
 
         private ClientWebSocket _socket;
 
-        public LxConnectionState State 
+        public LxWebSocketState State 
         { 
             get 
             {
@@ -50,29 +50,32 @@ namespace LoxNET.Transport.Connection
             }
         }
 
-        public LxConnection()
+        public LxWebSocket()
         {
-            _state = LxConnectionState.Closed;
+            _state = LxWebSocketState.Closed;
             _socket = new ClientWebSocket();
         }
 
         public async Task ConnectAsync(Uri uri, CancellationToken cancellationToken)
         {
-
+            await Task.FromResult(0);
         }
 
         public async Task<ILxReceiveResult> ReceiveAsync(CancellationToken cancellationToken)
         {
+            await Task.FromResult(0);
             return new LxReceiveResult();
         }
 
         public async Task SendAsync(ILxSendContent content, CancellationToken cancellationToken)
         {
+            await Task.FromResult(0);
             
         }
 
         public async Task CloseAsync(string statusDescription, CancellationToken cancellationToken)
         {
+            await Task.FromResult(0);
             
         }
     }

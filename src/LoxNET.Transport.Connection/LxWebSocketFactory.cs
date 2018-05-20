@@ -22,15 +22,30 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using LoxNET.Common;
+using EventFlow;
+using EventFlow.Logs;
+using EventFlow.Configuration;
 
-namespace LoxNET.Transport.Connection 
+namespace LoxNET.Transport.Connection
 {
-    public enum LxConnectionState
+    public class LxWebSocketFactory : ILxWebSocketFactory
     {
-        Closed,
-        CloseReceived,
-        CloseSent,
-        Connecting,
-        Open
+        private readonly ILxConfiguration _configuration;
+        private readonly ILog _log;
+
+        public LxWebSocketFactory(ILxConfiguration configuration, ILog log)
+        {
+            _configuration = configuration;
+            _log = log;
+        }
+
+        public async Task<ILxWebSocket> CreateConnectionAsync(CancellationToken token)
+        {
+            await Task.FromResult(0);
+            return new LxWebSocket();
+        }
     }
 }

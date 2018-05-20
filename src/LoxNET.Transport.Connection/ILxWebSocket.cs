@@ -29,9 +29,9 @@ using System.Net.WebSockets;
 
 namespace LoxNET.Transport.Connection
 {
-    public interface ILxConnection
+    public interface ILxWebSocket
     {
-        LxConnectionState State { get; }
+        LxWebSocketState State { get; }
 
         Task ConnectAsync(Uri uri, CancellationToken cancellationToken);
 
