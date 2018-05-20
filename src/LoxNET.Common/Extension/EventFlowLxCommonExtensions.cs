@@ -27,54 +27,25 @@ using EventFlow.Extensions;
 using EventFlow.Configuration;
 using LoxNET.Common;
 using LoxNET.Configuration;
-using LoxNET.Transport.Connection;
 //using EventFlow.Subscribers;
 
-namespace LoxNET.Transport.Extensions
+namespace LoxNET.Common.Extensions
 {
-    public static class LoxNETTransportExtension
+    public static class EventFlowOptionsLxCommonExtensions
     {
-        public static IEventFlowOptions AddLxTransport(
+        public static IEventFlowOptions AddLxCommon(
             this IEventFlowOptions eventFlowOptions, 
             ILxSettings configuration)
         {
-            registerCommon(eventFlowOptions, configuration);
-            registerServices(eventFlowOptions);
-            registerCommands(eventFlowOptions);
-            registerEvents(eventFlowOptions);
-            //registerServices(eventFlowOptions);
 
+            eventFlowOptions.RegisterServices(sr => 
+            {
+                sr.Register(rc => configuration, Lifetime.Singleton);
+            });
             return eventFlowOptions;
         }
 
 
-
-        private static void registerCommon(IEventFlowOptions options, ILxSettings configuration)
-        {
-            options.RegisterServices(sr => 
-            {
-                sr.Register(rc => configuration, Lifetime.Singleton);
-            });
-        } 
-
-        private static void registerServices(IEventFlowOptions options)
-        {
-            options.RegisterServices(sr => 
-            {
-                sr.Register<ILxWebSocketFactory, LxWebSocketFactory>(Lifetime.Singleton);
-                sr.Register<ILxWebSocket, LxWebSocket>(Lifetime.Singleton);
-                sr.Register<ILxMessageFactory, LxMessageFactory>(Lifetime.Singleton);
-                sr.Register<ILxMessage, LxMessage>(Lifetime.Singleton);
-            });
-        } 
-
-        private static void registerCommands(IEventFlowOptions options)
-        {
-        }
-         
-        private static void registerEvents(IEventFlowOptions options)
-        {
-        } 
 
     }
 }

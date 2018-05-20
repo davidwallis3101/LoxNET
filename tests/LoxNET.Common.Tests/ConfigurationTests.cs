@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xunit;
 using LoxNET.Common;
 using LoxNET.Configuration;
@@ -8,7 +9,7 @@ namespace LoxNET.Common.Tests
     
     public class ConfigurationTests
     {
-        private LxConfiguration config;
+        private LxSettings config;
 
         public ConfigurationTests()
         {
@@ -25,10 +26,14 @@ namespace LoxNET.Common.Tests
         public void HostnameIsNull()
         {
             var factory = new LxSettingsFactory();
-            factory.Register(new TestConfigProvider());
+            //actory.Register(new TestConfigProvider());
             var config = factory.Configure();
             
-            Assert.Equal(config.MiniServer.HostName, "testminiserver.loxone.com");
+            var eps = new List<ILxEndpointOptions>(
+                config.MiniServerOptions
+            );
+
+            Assert.Equal(eps.Count, 1);
         }
     }
 }

@@ -25,6 +25,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 using EventFlow.Configuration;
 using LoxNET.Transport.Domain.Model.ConnectionModel.Commands;
 using LoxNET.Transport.Domain.Services;
@@ -52,15 +53,16 @@ namespace LoxNET.Transport.Domain.Model.ConnectionModel.Jobs
             var commandBus = resolver.Resolve<ICommandBus>();
             var requestFactory = resolver.Resolve<ILxHttpRequestFactory>();
             //var websocketFactory = resolver.Resolve<ILxWebSocketFactory>();
+            var config = resolver.Resolve<ILxSettings>();
 
-            var miniServerCfg = LxConfigurationProvider.Config.MiniServer;
+            var miniServerCfg = new List<ILxEndpointOptions>(config.MiniServerOptions);
             UriBuilder builder = new UriBuilder(
                 "http", 
-                miniServerCfg.HostName,
-                miniServerCfg.Port
+                miniServerCfg[0].HostName,
+                miniServerCfg[0].Port
             );
-            builder.UserName = miniServerCfg.UserName;
-            builder.Password = miniServerCfg.Password;
+            builder.UserName = miniServerCfg[0].UserName;
+            builder.Password = miniServerCfg[0].Password;
 
             var request = await requestFactory.CreateAsync(
                 cancellationToken).ConfigureAwait(false);

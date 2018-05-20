@@ -24,6 +24,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using LoxNET.Common;
 using LoxNET.Configuration;
 using EventFlow;
@@ -34,10 +35,10 @@ namespace LoxNET.Transport.Connection
 {
     public class LxHttpRequestFactory : ILxHttpRequestFactory
     {
-        private readonly ILxConfiguration _configuration;
+        private readonly ILxSettings _configuration;
         private readonly ILog _log;
 
-        public LxHttpRequestFactory(ILxConfiguration configuration, ILog log)
+        public LxHttpRequestFactory(ILxSettings configuration, ILog log)
         {
             _configuration = configuration;
             _log = log;
@@ -45,8 +46,8 @@ namespace LoxNET.Transport.Connection
 
         public async Task<ILxHttpRequest> CreateAsync(CancellationToken token)
         {
-
-            var miniServerCfg = LxConfigurationProvider.Config.MiniServer;
+            var eps = new List<ILxEndpointOptions>(_configuration.MiniServerOptions);
+            var miniServerCfg = eps[0];
             UriBuilder builder = new UriBuilder(
                 "http", 
                 miniServerCfg.HostName,
@@ -59,20 +60,5 @@ namespace LoxNET.Transport.Connection
             return await Task.FromResult<ILxHttpRequest>(request); 
         }
 
-        private ILxHttpRequest create()
-        {
-            UriBuilder builder = new UriBuilder(
-                "http", 
-                _configuration.MiniServer.HostName,
-                _configuration.MiniServer.Port
-            );
-
-            builder.UserName = _configuration.MiniServer.UserName;
-            builder.Password = _configuration.MiniServer.Password;
-
-            var request = new LxHttpRequest(builder.Uri);
-
-            return request; 
-        }
     }
 }

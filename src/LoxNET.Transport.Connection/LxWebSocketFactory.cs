@@ -34,10 +34,10 @@ namespace LoxNET.Transport.Connection
 {
     public class LxWebSocketFactory : ILxWebSocketFactory
     {
-        private readonly ILxConfiguration _configuration;
+        private readonly ILxSettings _configuration;
         private readonly ILog _log;
 
-        public LxWebSocketFactory(ILxConfiguration configuration, ILog log)
+        public LxWebSocketFactory(ILxSettings configuration, ILog log)
         {
             _configuration = configuration;
             _log = log;

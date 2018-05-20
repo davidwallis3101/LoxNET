@@ -1,24 +1,54 @@
 using System;
+using System.Collections.Generic;
 
-namespace LoxNET.Common
+namespace LoxNET.Configuration
 {
-    public class LxConfiguration2 : ILxConfiguration2
+    public class LxSettings : ILxSettings
     {
+
+        private ILxEventFlowOptions lxEventFlowOptions = new LxEventFlowOptions();
+        public ILxEventFlowOptions EventFlowOptions 
+        { 
+            get { return lxEventFlowOptions; } 
+        }
+
+
+        private List<ILxEndpointOptions> lxMiniServers = new List<ILxEndpointOptions>();
+        public IEnumerable<ILxEndpointOptions> MiniServerOptions 
+        { 
+            get { return lxMiniServers; } 
+        } 
+    
+        public int MiniServerOptionsCount
+        {
+            get 
+            {
+                return lxMiniServers.Count;
+            }
+        }
+
+        public void RegisterLxEndpoint(ILxEndpointOptions endpoint)
+        {
+            lxMiniServers.Add(endpoint);
+        }
+
+
+        /*
         public string Hostname { get; }
         public int Port { get; }
         public string UserName { get; }
         public string Password { get; }
 
-        public static ILxConfiguration2 With(
+        public static ILxConfig With(
             string hostname, int port,
             string username, string password)
         {
-            return new LxConfiguration2(
+            return new LxConfig(
                 hostname, port, 
                 username, password);
         }
 
-        private LxConfiguration2(
+        private LxConfig(
             string hostname, int port,
             string username, string password)
         {
@@ -32,5 +62,7 @@ namespace LoxNET.Common
             UserName = username;
             Password = password;
         }
+        */
+        
     }
 }

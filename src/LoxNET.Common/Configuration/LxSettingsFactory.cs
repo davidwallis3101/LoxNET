@@ -10,60 +10,25 @@ namespace LoxNET.Configuration
 {
     public class LxSettingsFactory
     {
-        private List<ILxConfigurationProvider> _providers = new List<ILxConfigurationProvider>();
-
         public LxSettingsFactory()
         {
         }
 
-        public void Register(ILxConfigurationProvider provider)
+        public ILxSettings Configure()
         {
-            _providers.Add(provider);
-        }
+            var settings = new LxConfigBuilder().Build();
 
-        public ILxConfiguration Configure()
-        {
-            var builder = new ConfigurationBuilder().SetBasePath(
-                Directory.GetCurrentDirectory()
-            );
-
-            foreach (ILxConfigurationProvider provider in _providers)
+            if (settings.MiniServerOptionsCount == 0)
             {
-                provider.Prepare(builder);
+                var ep = new LxEndpointOptions();
+                ep.HostName = "testminiserver.loxone.com";
+                ep.Port = 7777;
+                ep.UserName = "web";
+                ep.Password = "web";
+                settings.RegisterLxEndpoint(ep);
             }
 
-            var config = new LxConfiguration();
-            var root = builder.Build();
-            
-            BindSection(root, "MiniServer", config.MiniServer);
-            BindSection(root, "EventFlow", config.EventFlow);
-
-            /*
-            var msKey = "MiniServer";
-            if (configRoot.HasSection(msKey))
-            {
-                var msSection = configRoot.GetSection(msKey);
-                if (msSection == null)
-                    throw new NullReferenceException(msKey);
-                msSection.Bind(config.MiniServer);
-            }
-
-            var efKey = "EventFlow";
-            var efSection = configRoot.GetSection(efKey);
-            if (efSection == null)
-                throw new NullReferenceException(efKey);
-            efSection.Bind(config.EventFlow);
-            */
-
-            return config;
-        }
-
-        private void BindSection(IConfigurationRoot root, string key, object bindingDestination)
-        {
-            var section = root.GetSection(key);
-            if (section == null)
-                throw new NullReferenceException(key);
-            section.Bind(bindingDestination);
+            return settings;
         }
     }
 }

@@ -7,7 +7,7 @@ using LoxNET.Configuration;
 
 namespace LoxNET.Common.Tests
 {
-    
+    /* 
     public class TestConfigProvider : ILxConfigurationProvider
     {
         public TestConfigProvider()
@@ -19,6 +19,7 @@ namespace LoxNET.Common.Tests
             var provider = new LxConfigurationProvider();
             provider.Build();
             */
+    /* 
         }
 
         public void Prepare(IConfigurationBuilder builder)
@@ -31,5 +32,7 @@ namespace LoxNET.Common.Tests
             };
             var miniserverSection = builder.AddInMemoryCollection(configs); 
         }
+
     }
+        */
 }

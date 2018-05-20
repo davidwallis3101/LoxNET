@@ -27,9 +27,16 @@ namespace LoxNET.CLI
         static void Main(string[] args)
         {
             Console.WriteLine("LoxNET.CLI start");
-            var configFactory = new LxSettingsFactory();
-            configFactory.Register(new AppSettingsProvider());
-            var config = configFactory.Configure();
+
+            var settings = new LxSettingsFactory().Configure();
+
+            Console.WriteLine(settings);
+
+
+
+            //var configFactory = new LxSettingsFactory();
+            //configFactory.Register(new AppSettingsProvider());
+            //var config = configFactory.Configure();
 
             //Console.WriteLine(LxConfigurationProvider.Config.MiniServer.HostName);
                         
