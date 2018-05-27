@@ -31,7 +31,7 @@ namespace LoxNET.Transport.Connection
     {
         Uri BaseUri { get; set; }
 
-        string Path { get; set; }
+        //string Path { get; set; }
 
         Task<byte[]> GetByteArrayAsync(string path, CancellationToken token);
 

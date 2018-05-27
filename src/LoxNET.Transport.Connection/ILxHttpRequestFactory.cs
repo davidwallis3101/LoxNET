@@ -32,6 +32,6 @@ namespace LoxNET.Transport.Connection
     {
         Task<ILxHttpRequest> CreateAsync(CancellationToken token);
 
-        Task<String> RequestStringAsync(string path, CancellationToken token);
+        //Task<String> RequestStringAsync(string path, CancellationToken token);
     }
 }
