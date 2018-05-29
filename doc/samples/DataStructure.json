@@ -1,0 +1,2066 @@
+{
+    "lastModified": "2018-05-28 22:26:43",
+    "msInfo": {
+        "serialNr": "504F9410ED9F",
+        "msName": "Zuhause",
+        "projectName": "Zuhause",
+        "localUrl": "10.23.99.10",
+        "remoteUrl": "dns.loxonecloud.com/504F9410ED9F",
+        "tempUnit": 0,
+        "currency": "€",
+        "squareMeasure": "m²",
+        "location": "Nagold",
+        "languageCode": "DEU",
+        "heatPeriodStart": "10-01",
+        "heatPeriodEnd": "04-30",
+        "coolPeriodStart": "05-01",
+        "coolPeriodEnd": "09-30",
+        "catTitle": "Kategorie",
+        "roomTitle": "Raum",
+        "miniserverType": 1,
+        "deviceMonitor": "10a20e98-025c-0d84-ffff12f46cd88b3d",
+        "currentUser": {
+            "name": "Admin",
+            "uuid": "10a20e98-0283-0ec3-ffff12f46cd88b3d",
+            "isAdmin": true,
+            "changePassword": true,
+            "userRights": 2047
+        }
+    },
+    "globalStates": {
+        "operatingMode": "10a20e98-0257-0d33-ffff12f46cd88b3d",
+        "sunrise": "10a20e98-0258-0d45-ffff12f46cd88b3d",
+        "sunset": "10a20e98-0258-0d48-ffff12f46cd88b3d",
+        "pastTasks": "10a20ebe-01c0-0f94-ffffb83d4db56685",
+        "plannedTasks": "10a20ebe-01c0-0f93-ffffb83d4db56685",
+        "notifications": "10a20e98-0250-0d03-ffff12f46cd88b3d",
+        "modifications": "10a20e98-0251-0d05-ffff12f46cd88b3d",
+        "favColorSequences": "10a3549f-0042-0a87-ffff69e57cc530ce",
+        "favColors": "10a3549f-0042-0a88-ffff69e57cc530ce",
+        "miniserverTime": "10a20e98-0250-0d04-ffff12f46cd88b3d"
+    },
+    "operatingModes": {
+        "0": "Feiertag",
+        "1": "Urlaub",
+        "2": "Freier Tag/Schulferien",
+        "3": "Montag",
+        "4": "Dienstag",
+        "5": "Mittwoch",
+        "6": "Donnerstag",
+        "7": "Freitag",
+        "8": "Samstag",
+        "9": "Sonntag",
+        "-1": "Alarm",
+        "-2": "Anwesenheitssimulation",
+        "-3": "Haus im Tiefschlaf",
+        "-4": "Erhöhter Wärmebedarf",
+        "-5": "Party",
+        "-6": "Abwesend"
+    },
+    "rooms": {
+        "10a20e98-0288-0efa-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0288-0efa-ffff12f46cd88b3d",
+            "name": "Bad",
+            "image": "00000000-0000-0006-2100000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": 3
+        },
+        "10b3ede6-02a6-1ff0-ffff12f46cd88b3d": {
+            "uuid": "10b3ede6-02a6-1ff0-ffff12f46cd88b3d",
+            "name": "Diele",
+            "image": "00000000-0000-002c-2100000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": 3
+        },
+        "10a48344-004c-1978-ffff12f46cd88b3d": {
+            "uuid": "10a48344-004c-1978-ffff12f46cd88b3d",
+            "name": "Gästezimmer",
+            "image": "00000000-0000-0014-2100000000000000.svg",
+            "defaultRating": 1,
+            "isFavorite": true,
+            "type": 2
+        },
+        "10a4841c-001b-2c45-ffff12f46cd88b3d": {
+            "uuid": "10a4841c-001b-2c45-ffff12f46cd88b3d",
+            "name": "Kim",
+            "image": "00000000-0000-0009-2100000000000000.svg",
+            "defaultRating": 1,
+            "isFavorite": true,
+            "type": 2
+        },
+        "10a20e98-0286-0ee6-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0286-0ee6-ffff12f46cd88b3d",
+            "name": "Küche",
+            "image": "00000000-0000-0005-2100000000000000.svg",
+            "defaultRating": 1,
+            "isFavorite": true,
+            "type": 2
+        },
+        "10a20e98-0284-0ed6-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0284-0ed6-ffff12f46cd88b3d",
+            "name": "Nicht zugeordnet",
+            "image": "00000000-0000-0005-2100000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": 2
+        },
+        "10a20e98-0287-0ef2-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "name": "Schlafzimmer",
+            "image": "00000000-0000-0008-2100000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": 1
+        },
+        "10a20e98-0285-0ee2-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "name": "Wohnzimmer",
+            "image": "00000000-0000-0004-2100000000000000.svg",
+            "defaultRating": 6,
+            "isFavorite": true,
+            "type": 2
+        },
+        "114d4814-00b2-2385-ffff12f46cd88b3d": {
+            "uuid": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "name": "Zentral",
+            "image": "00000000-0000-000b-2100000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": 4
+        }
+    },
+    "cats": {
+        "10a20e98-025e-0d95-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "name": "Beschattung",
+            "image": "00000000-0000-0003-2000000000000000.svg",
+            "defaultRating": 1,
+            "isFavorite": true,
+            "type": "shading",
+            "color": "#69C350"
+        },
+        "10a20e98-026f-0e2f-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "name": "Energie",
+            "image": "00000000-0000-0034-2000000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": "undefined",
+            "color": "#69C350"
+        },
+        "10a20e98-025e-0d99-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "name": "Heizung",
+            "image": "00000000-0000-0004-2000000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": "undefined",
+            "color": "#69C350"
+        },
+        "10a20e98-025f-0d9d-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-025f-0d9d-ffff12f46cd88b3d",
+            "name": "Klima",
+            "image": "00000000-0000-0005-2000000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": "undefined",
+            "color": "#69C350"
+        },
+        "10a20e98-025d-0d8d-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-025d-0d8d-ffff12f46cd88b3d",
+            "name": "Nicht zugeordnet",
+            "image": "00000000-0000-0001-2000000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": "undefined",
+            "color": "#69C350"
+        },
+        "10a20e98-0268-0df7-ffff12f46cd88b3d": {
+            "uuid": "10a20e98-0268-0df7-ffff12f46cd88b3d",
+            "name": "Verbraucher",
+            "image": "00000000-0000-0022-2000000000000000.svg",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "type": "undefined",
+            "color": "#69C350"
+        }
+    },
+    "controls": {
+        "10a48656-0061-5d60-ffff12f46cd88b3d": {
+            "name": "Rollo 09",
+            "type": "Jalousie",
+            "uuidAction": "10a48656-0061-5d60-ffff12f46cd88b3d",
+            "room": "10a20e98-0288-0efa-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a48656-0061-5d32-fffff0eef54cb13a",
+                "down": "10a48656-0061-5d33-fffff0eef54cb13a",
+                "infoText": "10a48656-0061-5d37-fffff0eef54cb13a",
+                "mode": "10a48656-0061-5d34-fffff0eef54cb13a",
+                "learningStep": "10a48656-0061-5d35-fffff0eef54cb13a",
+                "hasEndposition": "10a48656-0061-5d36-fffff0eef54cb13a",
+                "position": "10a48656-0061-5d58-fffff0eef54cb13a",
+                "shadePosition": "10a48656-0061-5d59-fffff0eef54cb13a",
+                "safetyActive": "10a48656-0061-5d5e-fffff0eef54cb13a",
+                "autoAllowed": "10a48656-0061-5d3f-fffff0eef54cb13a",
+                "autoActive": "10a48656-0061-5d5d-fffff0eef54cb13a",
+                "locked": "10a48656-0061-5d5f-fffff0eef54cb13a"
+            }
+        },
+        "117b4fe9-03ae-9fa4-ffff717c16872761": {
+            "name": "Smart Socket 05",
+            "type": "Switch",
+            "uuidAction": "117b4fe9-03ae-9fa4-ffff717c16872761",
+            "room": "10a20e98-0288-0efa-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b4fe9-03ae-9faa-ffff717c16872761"
+            }
+        },
+        "10b3fcc4-0257-17e7-ffff12f46cd88b3d": {
+            "name": "Socket 05 Relais",
+            "type": "InfoOnlyDigital",
+            "uuidAction": "10b3fcc4-0257-17e7-ffff12f46cd88b3d",
+            "room": "10a20e98-0288-0efa-ffff12f46cd88b3d",
+            "cat": "10a20e98-0268-0df7-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "text": {
+                    "off": "Aus",
+                    "on": "An"
+                },
+                "color": {
+                    "off": "#E73246",
+                    "on": "#69C350"
+                }
+            },
+            "states": {
+                "active": "10b3fcc4-0257-17e7-ffff12f46cd88b3d"
+            }
+        },
+        "114d4d3d-0017-703e-ffffad65b125b282": {
+            "name": "Freigabe Wärmeelemente",
+            "type": "Radio",
+            "uuidAction": "114d4d3d-0017-703e-ffffad65b125b282",
+            "room": "10b3ede6-02a6-1ff0-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4d3d-0017-7057-ffffad65b125b282"
+            }
+        },
+        "114d4d3d-0017-6fe3-ffffad65b125b282": {
+            "name": "Intelligente Raumregelung",
+            "type": "IRoomController",
+            "uuidAction": "114d4d3d-0017-6fe3-ffffad65b125b282",
+            "room": "10b3ede6-02a6-1ff0-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 7,
+            "isFavorite": true,
+            "isSecured": false,
+            "details": {
+                "restrictedToMode": 0,
+                "temperatures": {
+                    "0": {
+                        "isAbsolute": false
+                    },
+                    "1": {
+                        "isAbsolute": true
+                    },
+                    "2": {
+                        "isAbsolute": true
+                    },
+                    "3": {
+                        "isAbsolute": true
+                    },
+                    "4": {
+                        "isAbsolute": true
+                    },
+                    "5": {
+                        "isAbsolute": false
+                    },
+                    "6": {
+                        "isAbsolute": false
+                    }
+                },
+                "format": "%.1f°"
+            },
+            "states": {
+                "tempTarget": "114d4d3d-0017-700b-ffffad65b125b282",
+                "tempActual": "114d4d3d-0017-6fe7-ffffad65b125b282",
+                "error": "114d4d3d-0017-7009-ffffad65b125b282",
+                "mode": "114d4d3d-0017-7007-ffffad65b125b282",
+                "serviceMode": "114d4d3d-0017-7008-ffffad65b125b282",
+                "currHeatTempIx": "1105ef89-02b9-7fce-ffff1a27f9c7fe25",
+                "currCoolTempIx": "1105ef89-02b9-7fcf-ffff1a27f9c7fe25",
+                "override": "114d4d3d-0017-700e-ffffad65b125b282",
+                "isPreparing": "114d4d3d-0017-700f-ffffad65b125b282",
+                "valveHeat": "114d4d3d-0017-6ffe-ffffad65b125b282",
+                "valveCool": "114d4d3d-0017-7002-ffffad65b125b282",
+                "openWindow": "114d4d3d-0017-6fe8-ffffad65b125b282",
+                "stop": "114d4d3d-0017-6fef-ffffad65b125b282",
+                "overrideTotal": "114d4d3d-0017-7069-ffffad65b125b282",
+                "movement": "114d4d3d-0017-7068-ffffad65b125b282",
+                "manualMode": "114d4d3d-0017-706a-ffffad65b125b282",
+                "temperatures": [
+                    "114d4d3d-0017-6ff0-ffffad65b125b282",
+                    "114d4d3d-0017-6ff1-ffffad65b125b282",
+                    "114d4d3d-0017-6ff2-ffffad65b125b282",
+                    "114d4d3d-0017-6ff5-ffffad65b125b282",
+                    "114d4d3d-0017-6ff6-ffffad65b125b282",
+                    "114d4d3d-0017-6ff4-ffffad65b125b282",
+                    "114d4d3d-0017-6ff3-ffffad65b125b282"
+                ]
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Temperatur",
+                        "format": "%.1f°C",
+                        "uuid": "114d4d3d-0017-6fe7-ffffad65b125b282",
+                        "visuType": 0
+                    }
+                ]
+            },
+            "subControls": {
+                "1105ef89-02b9-7fcc-ffff1a27f9c7fe25": {
+                    "name": "Heating",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "1105ef89-02b9-7fcc-ffff1a27f9c7fe25",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "1105ef89-02b9-7fcc-ffff1a27f9c7fe25",
+                        "mode": "114d4d3d-0017-700c-ffffad65b125b282",
+                        "modeList": "114d4d3d-0017-7066-ffffad65b125b282",
+                        "value": "1105ef89-02b9-7fce-ffff1a27f9c7fe25"
+                    }
+                },
+                "1105ef89-02b9-7fcd-ffff1a27f9c7fe25": {
+                    "name": "Cooling",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "1105ef89-02b9-7fcd-ffff1a27f9c7fe25",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "1105ef89-02b9-7fcd-ffff1a27f9c7fe25",
+                        "mode": "114d4d3d-0017-700d-ffffad65b125b282",
+                        "modeList": "114d4d3d-0017-7067-ffffad65b125b282",
+                        "value": "1105ef89-02b9-7fcf-ffff1a27f9c7fe25"
+                    }
+                }
+            }
+        },
+        "114d4d3d-0017-7018-ffffad65b125b282": {
+            "name": "Offsettemperatur",
+            "type": "Radio",
+            "uuidAction": "114d4d3d-0017-7018-ffffad65b125b282",
+            "room": "10b3ede6-02a6-1ff0-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": "00000000-0000-0005-2000000000000000",
+            "details": {
+                "allOff": "Offset 0",
+                "outputs": {
+                    "1": "Offset +1",
+                    "2": "Offset +2",
+                    "3": "Offset +3",
+                    "4": "Offset -1",
+                    "5": "Offset -2",
+                    "6": "Offset -3"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4d3d-0017-7031-ffffad65b125b282"
+            }
+        },
+        "10a485bf-032e-3d76-ffff12f46cd88b3d": {
+            "name": "Rollo 08",
+            "type": "Jalousie",
+            "uuidAction": "10a485bf-032e-3d76-ffff12f46cd88b3d",
+            "room": "10a48344-004c-1978-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a485bf-032e-3d48-ffffac7b697ae731",
+                "down": "10a485bf-032e-3d49-ffffac7b697ae731",
+                "infoText": "10a485bf-032e-3d4d-ffffac7b697ae731",
+                "mode": "10a485bf-032e-3d4a-ffffac7b697ae731",
+                "learningStep": "10a485bf-032e-3d4b-ffffac7b697ae731",
+                "hasEndposition": "10a485bf-032e-3d4c-ffffac7b697ae731",
+                "position": "10a485bf-032e-3d6e-ffffac7b697ae731",
+                "shadePosition": "10a485bf-032e-3d6f-ffffac7b697ae731",
+                "safetyActive": "10a485bf-032e-3d74-ffffac7b697ae731",
+                "autoAllowed": "10a485bf-032e-3d55-ffffac7b697ae731",
+                "autoActive": "10a485bf-032e-3d73-ffffac7b697ae731",
+                "locked": "10a485bf-032e-3d75-ffffac7b697ae731"
+            }
+        },
+        "114d4c5b-034e-43c8-ffff3b6237ca0cc3": {
+            "name": "Freigabe Wärmeelemente",
+            "type": "Radio",
+            "uuidAction": "114d4c5b-034e-43c8-ffff3b6237ca0cc3",
+            "room": "10a48344-004c-1978-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4c5b-034e-43e1-ffff3b6237ca0cc3"
+            }
+        },
+        "114d4c5b-034e-436d-ffff3b6237ca0cc3": {
+            "name": "Intelligente Raumregelung",
+            "type": "IRoomController",
+            "uuidAction": "114d4c5b-034e-436d-ffff3b6237ca0cc3",
+            "room": "10a48344-004c-1978-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 5,
+            "isFavorite": true,
+            "isSecured": false,
+            "details": {
+                "restrictedToMode": 0,
+                "temperatures": {
+                    "0": {
+                        "isAbsolute": false
+                    },
+                    "1": {
+                        "isAbsolute": true
+                    },
+                    "2": {
+                        "isAbsolute": true
+                    },
+                    "3": {
+                        "isAbsolute": true
+                    },
+                    "4": {
+                        "isAbsolute": true
+                    },
+                    "5": {
+                        "isAbsolute": false
+                    },
+                    "6": {
+                        "isAbsolute": false
+                    }
+                },
+                "format": "%.1f°"
+            },
+            "states": {
+                "tempTarget": "114d4c5b-034e-4395-ffff3b6237ca0cc3",
+                "tempActual": "114d4c5b-034e-4371-ffff3b6237ca0cc3",
+                "error": "114d4c5b-034e-4393-ffff3b6237ca0cc3",
+                "mode": "114d4c5b-034e-4391-ffff3b6237ca0cc3",
+                "serviceMode": "114d4c5b-034e-4392-ffff3b6237ca0cc3",
+                "currHeatTempIx": "114d4d3d-0118-706e-ffff887415f73635",
+                "currCoolTempIx": "114d4d3d-0118-706f-ffff887415f73635",
+                "override": "114d4c5b-034e-4398-ffff3b6237ca0cc3",
+                "isPreparing": "114d4c5b-034e-4399-ffff3b6237ca0cc3",
+                "valveHeat": "114d4c5b-034e-4388-ffff3b6237ca0cc3",
+                "valveCool": "114d4c5b-034e-438c-ffff3b6237ca0cc3",
+                "openWindow": "114d4c5b-034e-4372-ffff3b6237ca0cc3",
+                "stop": "114d4c5b-034e-4379-ffff3b6237ca0cc3",
+                "overrideTotal": "114d4c5b-034e-43f3-ffff3b6237ca0cc3",
+                "movement": "114d4c5b-034e-43f2-ffff3b6237ca0cc3",
+                "manualMode": "114d4c5b-034e-43f4-ffff3b6237ca0cc3",
+                "temperatures": [
+                    "114d4c5b-034e-437a-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-437b-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-437c-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-437f-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-4380-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-437e-ffff3b6237ca0cc3",
+                    "114d4c5b-034e-437d-ffff3b6237ca0cc3"
+                ]
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Temperatur",
+                        "format": "%.1f°C",
+                        "uuid": "114d4c5b-034e-4371-ffff3b6237ca0cc3",
+                        "visuType": 0
+                    }
+                ]
+            },
+            "subControls": {
+                "114d4d3d-0118-706c-ffff887415f73635": {
+                    "name": "Heating",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4d3d-0118-706c-ffff887415f73635",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4d3d-0118-706c-ffff887415f73635",
+                        "mode": "114d4c5b-034e-4396-ffff3b6237ca0cc3",
+                        "modeList": "114d4c5b-034e-43f0-ffff3b6237ca0cc3",
+                        "value": "114d4d3d-0118-706e-ffff887415f73635"
+                    }
+                },
+                "114d4d3d-0118-706d-ffff887415f73635": {
+                    "name": "Cooling",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4d3d-0118-706d-ffff887415f73635",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4d3d-0118-706d-ffff887415f73635",
+                        "mode": "114d4c5b-034e-4397-ffff3b6237ca0cc3",
+                        "modeList": "114d4c5b-034e-43f1-ffff3b6237ca0cc3",
+                        "value": "114d4d3d-0118-706f-ffff887415f73635"
+                    }
+                }
+            }
+        },
+        "114d4c5b-034e-43a2-ffff3b6237ca0cc3": {
+            "name": "Offsettemperatur",
+            "type": "Radio",
+            "uuidAction": "114d4c5b-034e-43a2-ffff3b6237ca0cc3",
+            "room": "10a48344-004c-1978-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": "00000000-0000-0005-2000000000000000",
+            "details": {
+                "allOff": "Offset 0",
+                "outputs": {
+                    "1": "Offset +1",
+                    "2": "Offset +2",
+                    "3": "Offset +3",
+                    "4": "Offset -1",
+                    "5": "Offset -2",
+                    "6": "Offset -3"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4c5b-034e-43bb-ffff3b6237ca0cc3"
+            }
+        },
+        "10a48635-03c7-5070-ffff12f46cd88b3d": {
+            "name": "Rollo 10",
+            "type": "Jalousie",
+            "uuidAction": "10a48635-03c7-5070-ffff12f46cd88b3d",
+            "room": "10a4841c-001b-2c45-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a48635-03c7-5042-ffffe0e024bd33c1",
+                "down": "10a48635-03c7-5043-ffffe0e024bd33c1",
+                "infoText": "10a48635-03c7-5047-ffffe0e024bd33c1",
+                "mode": "10a48635-03c7-5044-ffffe0e024bd33c1",
+                "learningStep": "10a48635-03c7-5045-ffffe0e024bd33c1",
+                "hasEndposition": "10a48635-03c7-5046-ffffe0e024bd33c1",
+                "position": "10a48635-03c7-5068-ffffe0e024bd33c1",
+                "shadePosition": "10a48635-03c7-5069-ffffe0e024bd33c1",
+                "safetyActive": "10a48635-03c7-506e-ffffe0e024bd33c1",
+                "autoAllowed": "10a48635-03c7-504f-ffffe0e024bd33c1",
+                "autoActive": "10a48635-03c7-506d-ffffe0e024bd33c1",
+                "locked": "10a48635-03c7-506f-ffffe0e024bd33c1"
+            }
+        },
+        "114d4b16-022a-cad6-ffff75b4c22393fb": {
+            "name": "Freigabe Wärmeelemente",
+            "type": "Radio",
+            "uuidAction": "114d4b16-022a-cad6-ffff75b4c22393fb",
+            "room": "10a4841c-001b-2c45-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4b16-022a-caf0-ffff75b4c22393fb"
+            }
+        },
+        "114d4b16-022a-ca77-ffff75b4c22393fb": {
+            "name": "Intelligente Raumregelung",
+            "type": "IRoomController",
+            "uuidAction": "114d4b16-022a-ca77-ffff75b4c22393fb",
+            "room": "10a4841c-001b-2c45-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 7,
+            "isFavorite": true,
+            "isSecured": false,
+            "details": {
+                "restrictedToMode": 0,
+                "temperatures": {
+                    "0": {
+                        "isAbsolute": false
+                    },
+                    "1": {
+                        "isAbsolute": true
+                    },
+                    "2": {
+                        "isAbsolute": true
+                    },
+                    "3": {
+                        "isAbsolute": true
+                    },
+                    "4": {
+                        "isAbsolute": true
+                    },
+                    "5": {
+                        "isAbsolute": false
+                    },
+                    "6": {
+                        "isAbsolute": false
+                    }
+                },
+                "format": "%.1f°"
+            },
+            "states": {
+                "tempTarget": "114d4b16-022a-caa2-ffff75b4c22393fb",
+                "tempActual": "114d4b16-022a-ca7b-ffff75b4c22393fb",
+                "error": "114d4b16-022a-caa0-ffff75b4c22393fb",
+                "mode": "114d4b16-022a-ca9e-ffff75b4c22393fb",
+                "serviceMode": "114d4b16-022a-ca9f-ffff75b4c22393fb",
+                "currHeatTempIx": "114d4c5b-0063-43f9-ffff364e6c957ad9",
+                "currCoolTempIx": "114d4c5b-0063-43fa-ffff364e6c957ad9",
+                "override": "114d4b16-022a-caa5-ffff75b4c22393fb",
+                "isPreparing": "114d4b16-022a-caa6-ffff75b4c22393fb",
+                "valveHeat": "114d4b16-022a-ca95-ffff75b4c22393fb",
+                "valveCool": "114d4b16-022a-ca99-ffff75b4c22393fb",
+                "openWindow": "114d4b16-022a-ca7d-ffff75b4c22393fb",
+                "stop": "114d4b16-022a-ca84-ffff75b4c22393fb",
+                "overrideTotal": "114d4b16-022b-cb1e-ffff75b4c22393fb",
+                "movement": "114d4b16-022b-cb1d-ffff75b4c22393fb",
+                "manualMode": "114d4b16-022b-cb1f-ffff75b4c22393fb",
+                "temperatures": [
+                    "114d4b16-022a-ca85-ffff75b4c22393fb",
+                    "114d4b16-022a-ca86-ffff75b4c22393fb",
+                    "114d4b16-022a-ca88-ffff75b4c22393fb",
+                    "114d4b16-022a-ca8c-ffff75b4c22393fb",
+                    "114d4b16-022a-ca8d-ffff75b4c22393fb",
+                    "114d4b16-022a-ca8b-ffff75b4c22393fb",
+                    "114d4b16-022a-ca8a-ffff75b4c22393fb"
+                ]
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Temperatur",
+                        "format": "%.1f°C",
+                        "uuid": "114d4b16-022a-ca7b-ffff75b4c22393fb",
+                        "visuType": 0
+                    }
+                ]
+            },
+            "subControls": {
+                "114d4c5b-0063-43f7-ffff364e6c957ad9": {
+                    "name": "Heating",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4c5b-0063-43f7-ffff364e6c957ad9",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4c5b-0063-43f7-ffff364e6c957ad9",
+                        "mode": "114d4b16-022a-caa3-ffff75b4c22393fb",
+                        "modeList": "114d4b16-022a-cb1b-ffff75b4c22393fb",
+                        "value": "114d4c5b-0063-43f9-ffff364e6c957ad9"
+                    }
+                },
+                "114d4c5b-0063-43f8-ffff364e6c957ad9": {
+                    "name": "Cooling",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4c5b-0063-43f8-ffff364e6c957ad9",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4c5b-0063-43f8-ffff364e6c957ad9",
+                        "mode": "114d4b16-022a-caa4-ffff75b4c22393fb",
+                        "modeList": "114d4b16-022b-cb1c-ffff75b4c22393fb",
+                        "value": "114d4c5b-0063-43fa-ffff364e6c957ad9"
+                    }
+                }
+            }
+        },
+        "114d4b16-022a-cab0-ffff75b4c22393fb": {
+            "name": "Offsettemperatur",
+            "type": "Radio",
+            "uuidAction": "114d4b16-022a-cab0-ffff75b4c22393fb",
+            "room": "10a4841c-001b-2c45-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": "00000000-0000-0005-2000000000000000",
+            "details": {
+                "allOff": "Offset 0",
+                "outputs": {
+                    "1": "Offset +1",
+                    "2": "Offset +2",
+                    "3": "Offset +3",
+                    "4": "Offset -1",
+                    "5": "Offset -2",
+                    "6": "Offset -3"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4b16-022a-cac9-ffff75b4c22393fb"
+            }
+        },
+        "10a4712b-0104-5e87-ffff12f46cd88b3d": {
+            "name": "Rollo 05",
+            "type": "Jalousie",
+            "uuidAction": "10a4712b-0104-5e87-ffff12f46cd88b3d",
+            "room": "10a20e98-0286-0ee6-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a4712b-0104-5e59-ffff4d2acbaf5f2d",
+                "down": "10a4712b-0104-5e5a-ffff4d2acbaf5f2d",
+                "infoText": "10a4712b-0104-5e5e-ffff4d2acbaf5f2d",
+                "mode": "10a4712b-0104-5e5b-ffff4d2acbaf5f2d",
+                "learningStep": "10a4712b-0104-5e5c-ffff4d2acbaf5f2d",
+                "hasEndposition": "10a4712b-0104-5e5d-ffff4d2acbaf5f2d",
+                "position": "10a4712b-0104-5e7f-ffff4d2acbaf5f2d",
+                "shadePosition": "10a4712b-0104-5e80-ffff4d2acbaf5f2d",
+                "safetyActive": "10a4712b-0104-5e85-ffff4d2acbaf5f2d",
+                "autoAllowed": "10a4712b-0104-5e66-ffff4d2acbaf5f2d",
+                "autoActive": "10a4712b-0104-5e84-ffff4d2acbaf5f2d",
+                "locked": "10a4712b-0104-5e86-ffff4d2acbaf5f2d"
+            }
+        },
+        "10a4712e-0133-622b-ffff12f46cd88b3d": {
+            "name": "Rollo 06",
+            "type": "Jalousie",
+            "uuidAction": "10a4712e-0133-622b-ffff12f46cd88b3d",
+            "room": "10a20e98-0286-0ee6-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a4712e-0133-61fd-fffff05701d59498",
+                "down": "10a4712e-0133-61fe-fffff05701d59498",
+                "infoText": "10a4712e-0133-6202-fffff05701d59498",
+                "mode": "10a4712e-0133-61ff-fffff05701d59498",
+                "learningStep": "10a4712e-0133-6200-fffff05701d59498",
+                "hasEndposition": "10a4712e-0133-6201-fffff05701d59498",
+                "position": "10a4712e-0133-6223-fffff05701d59498",
+                "shadePosition": "10a4712e-0133-6224-fffff05701d59498",
+                "safetyActive": "10a4712e-0133-6229-fffff05701d59498",
+                "autoAllowed": "10a4712e-0133-620a-fffff05701d59498",
+                "autoActive": "10a4712e-0133-6228-fffff05701d59498",
+                "locked": "10a4712e-0133-622a-fffff05701d59498"
+            }
+        },
+        "10a47133-00a1-65d0-ffff12f46cd88b3d": {
+            "name": "Rollo 07",
+            "type": "Jalousie",
+            "uuidAction": "10a47133-00a1-65d0-ffff12f46cd88b3d",
+            "room": "10a20e98-0286-0ee6-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a47133-00a1-65a2-ffffd43be1d3ff65",
+                "down": "10a47133-00a1-65a3-ffffd43be1d3ff65",
+                "infoText": "10a47133-00a1-65a7-ffffd43be1d3ff65",
+                "mode": "10a47133-00a1-65a4-ffffd43be1d3ff65",
+                "learningStep": "10a47133-00a1-65a5-ffffd43be1d3ff65",
+                "hasEndposition": "10a47133-00a1-65a6-ffffd43be1d3ff65",
+                "position": "10a47133-00a1-65c8-ffffd43be1d3ff65",
+                "shadePosition": "10a47133-00a1-65c9-ffffd43be1d3ff65",
+                "safetyActive": "10a47133-00a1-65ce-ffffd43be1d3ff65",
+                "autoAllowed": "10a47133-00a1-65af-ffffd43be1d3ff65",
+                "autoActive": "10a47133-00a1-65cd-ffffd43be1d3ff65",
+                "locked": "10a47133-00a1-65cf-ffffd43be1d3ff65"
+            }
+        },
+        "11b06dd4-0366-f2a2-ffff12f46cd88b3d": {
+            "name": "Schaltuhr",
+            "type": "Daytimer",
+            "uuidAction": "11b06dd4-0366-f2a2-ffff12f46cd88b3d",
+            "room": "10a20e98-0284-0ed6-ffff12f46cd88b3d",
+            "cat": "10a20e98-025d-0d8d-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "analog": false,
+                "text": {
+                    "on": "Aktiv",
+                    "off": "Inaktiv"
+                }
+            },
+            "states": {
+                "mode": "11b06dd4-0366-f29e-ffff052425b34509",
+                "override": "11b06dd4-0366-f2a1-ffff052425b34509",
+                "value": "11b06dd4-0366-f29d-ffff052425b34509",
+                "needsActivation": "11b06dd4-0366-f295-ffff052425b34509",
+                "modeList": "11b06dd4-0366-f296-ffff052425b34509",
+                "entriesAndDefaultValue": "11b06dd4-0366-f2a2-ffff12f46cd88b3d",
+                "resetActive": "11b06dd4-0366-f298-ffff052425b34509"
+            }
+        },
+        "110df6fb-03db-5df8-ffff12f46cd88b3d": {
+            "name": "Automatikjalousie",
+            "type": "Jalousie",
+            "uuidAction": "110df6fb-03db-5df8-ffff12f46cd88b3d",
+            "room": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 0
+            },
+            "states": {
+                "infoText": "110df78f-01ed-b680-ffff12f46cd88b3d",
+                "up": "110df6fb-03db-5df0-ffff21feac005af9",
+                "down": "110df6fb-03db-5df1-ffff21feac005af9",
+                "position": "110df6fb-03db-5df2-ffff21feac005af9",
+                "shadePosition": "110df6fb-03db-5df3-ffff21feac005af9",
+                "safetyActive": "110df6fb-03db-5df5-ffff21feac005af9",
+                "autoAllowed": "110df6fb-03db-5dd1-ffff21feac005af9",
+                "autoActive": "110df6fb-03db-5df4-ffff21feac005af9",
+                "locked": "110df6fb-03db-5df6-ffff21feac005af9"
+            }
+        },
+        "114d4dd6-03dc-8e91-ffff6023fbbd852f": {
+            "name": "Freigabe Wärmeelemente",
+            "type": "Radio",
+            "uuidAction": "114d4dd6-03dc-8e91-ffff6023fbbd852f",
+            "room": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4dd6-03dc-8eaa-ffff6023fbbd852f"
+            }
+        },
+        "114d4dd6-03dc-8e36-ffff6023fbbd852f": {
+            "name": "Intelligente Raumregelung",
+            "type": "IRoomController",
+            "uuidAction": "114d4dd6-03dc-8e36-ffff6023fbbd852f",
+            "room": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 9,
+            "isFavorite": true,
+            "isSecured": false,
+            "details": {
+                "restrictedToMode": 0,
+                "temperatures": {
+                    "0": {
+                        "isAbsolute": false
+                    },
+                    "1": {
+                        "isAbsolute": true
+                    },
+                    "2": {
+                        "isAbsolute": true
+                    },
+                    "3": {
+                        "isAbsolute": true
+                    },
+                    "4": {
+                        "isAbsolute": true
+                    },
+                    "5": {
+                        "isAbsolute": false
+                    },
+                    "6": {
+                        "isAbsolute": false
+                    }
+                },
+                "format": "%.1f°"
+            },
+            "states": {
+                "tempTarget": "114d4dd6-03dc-8e5e-ffff6023fbbd852f",
+                "tempActual": "114d4dd6-03dc-8e3a-ffff6023fbbd852f",
+                "error": "114d4dd6-03dc-8e5c-ffff6023fbbd852f",
+                "mode": "114d4dd6-03dc-8e5a-ffff6023fbbd852f",
+                "serviceMode": "114d4dd6-03dc-8e5b-ffff6023fbbd852f",
+                "currHeatTempIx": "114d4dd8-00fa-8ecd-ffff4e1c0f8bc9eb",
+                "currCoolTempIx": "114d4dd8-00fa-8ece-ffff4e1c0f8bc9eb",
+                "override": "114d4dd6-03dc-8e61-ffff6023fbbd852f",
+                "isPreparing": "114d4dd6-03dc-8e62-ffff6023fbbd852f",
+                "valveHeat": "114d4dd6-03dc-8e51-ffff6023fbbd852f",
+                "valveCool": "114d4dd6-03dc-8e55-ffff6023fbbd852f",
+                "openWindow": "114d4dd6-03dc-8e3b-ffff6023fbbd852f",
+                "stop": "114d4dd6-03dc-8e42-ffff6023fbbd852f",
+                "overrideTotal": "114d4dd6-03dc-8ebc-ffff6023fbbd852f",
+                "movement": "114d4dd6-03dc-8ebb-ffff6023fbbd852f",
+                "manualMode": "114d4dd6-03dc-8ebd-ffff6023fbbd852f",
+                "temperatures": [
+                    "114d4dd6-03dc-8e43-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e44-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e45-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e48-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e49-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e47-ffff6023fbbd852f",
+                    "114d4dd6-03dc-8e46-ffff6023fbbd852f"
+                ]
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Temperatur",
+                        "format": "%.1f°C",
+                        "uuid": "114d4dd6-03dc-8e3a-ffff6023fbbd852f",
+                        "visuType": 0
+                    }
+                ]
+            },
+            "subControls": {
+                "114d4dd8-00fa-8ecb-ffff4e1c0f8bc9eb": {
+                    "name": "Heating",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4dd8-00fa-8ecb-ffff4e1c0f8bc9eb",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4dd8-00fa-8ecb-ffff4e1c0f8bc9eb",
+                        "mode": "114d4dd6-03dc-8e5f-ffff6023fbbd852f",
+                        "modeList": "114d4dd6-03dc-8eb9-ffff6023fbbd852f",
+                        "value": "114d4dd8-00fa-8ecd-ffff4e1c0f8bc9eb"
+                    }
+                },
+                "114d4dd8-00fa-8ecc-ffff4e1c0f8bc9eb": {
+                    "name": "Cooling",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4dd8-00fa-8ecc-ffff4e1c0f8bc9eb",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4dd8-00fa-8ecc-ffff4e1c0f8bc9eb",
+                        "mode": "114d4dd6-03dc-8e60-ffff6023fbbd852f",
+                        "modeList": "114d4dd6-03dc-8eba-ffff6023fbbd852f",
+                        "value": "114d4dd8-00fa-8ece-ffff4e1c0f8bc9eb"
+                    }
+                }
+            }
+        },
+        "114d4dd6-03dc-8e6b-ffff6023fbbd852f": {
+            "name": "Offsettemperatur",
+            "type": "Radio",
+            "uuidAction": "114d4dd6-03dc-8e6b-ffff6023fbbd852f",
+            "room": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": "00000000-0000-0005-2000000000000000",
+            "details": {
+                "allOff": "Offset 0",
+                "outputs": {
+                    "1": "Offset +1",
+                    "2": "Offset +2",
+                    "3": "Offset +3",
+                    "4": "Offset -1",
+                    "5": "Offset -2",
+                    "6": "Offset -3"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4dd6-03dc-8e84-ffff6023fbbd852f"
+            }
+        },
+        "11af0838-02cd-cee6-ffff12f46cd88b3d": {
+            "name": "Klima Schlafzimmer",
+            "type": "TextState",
+            "uuidAction": "11af0838-02cd-cee6-ffff12f46cd88b3d",
+            "room": "10a20e98-0287-0ef2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025f-0d9d-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "textAndIcon": "11af0838-02cd-cee6-ffff12f46cd88b3d"
+            }
+        },
+        "10a35825-03b2-39a7-ffff12f46cd88b3d": {
+            "name": "Rollo 01",
+            "type": "Jalousie",
+            "uuidAction": "10a35825-03b2-39a7-ffff12f46cd88b3d",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a35825-03b2-3979-ffff96cc2d6d362d",
+                "down": "10a35825-03b2-397a-ffff96cc2d6d362d",
+                "infoText": "10a35825-03b2-397e-ffff96cc2d6d362d",
+                "mode": "10a35825-03b2-397b-ffff96cc2d6d362d",
+                "learningStep": "10a35825-03b2-397c-ffff96cc2d6d362d",
+                "hasEndposition": "10a35825-03b2-397d-ffff96cc2d6d362d",
+                "position": "10a35825-03b2-399f-ffff96cc2d6d362d",
+                "shadePosition": "10a35825-03b2-39a0-ffff96cc2d6d362d",
+                "safetyActive": "10a35825-03b2-39a5-ffff96cc2d6d362d",
+                "autoAllowed": "10a35825-03b2-3986-ffff96cc2d6d362d",
+                "autoActive": "10a35825-03b2-39a4-ffff96cc2d6d362d",
+                "locked": "10a35825-03b2-39a6-ffff96cc2d6d362d"
+            }
+        },
+        "10a35ca3-018e-3fba-ffff12f46cd88b3d": {
+            "name": "Rollo 02",
+            "type": "Jalousie",
+            "uuidAction": "10a35ca3-018e-3fba-ffff12f46cd88b3d",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a35ca3-018e-3f8c-ffff265a1513f85c",
+                "down": "10a35ca3-018e-3f8d-ffff265a1513f85c",
+                "infoText": "10a35ca3-018e-3f91-ffff265a1513f85c",
+                "mode": "10a35ca3-018e-3f8e-ffff265a1513f85c",
+                "learningStep": "10a35ca3-018e-3f8f-ffff265a1513f85c",
+                "hasEndposition": "10a35ca3-018e-3f90-ffff265a1513f85c",
+                "position": "10a35ca3-018e-3fb2-ffff265a1513f85c",
+                "shadePosition": "10a35ca3-018e-3fb3-ffff265a1513f85c",
+                "safetyActive": "10a35ca3-018e-3fb8-ffff265a1513f85c",
+                "autoAllowed": "10a35ca3-018e-3f99-ffff265a1513f85c",
+                "autoActive": "10a35ca3-018e-3fb7-ffff265a1513f85c",
+                "locked": "10a35ca3-018e-3fb9-ffff265a1513f85c"
+            }
+        },
+        "10a35ce1-0186-448a-ffff12f46cd88b3d": {
+            "name": "Rollo 03",
+            "type": "Jalousie",
+            "uuidAction": "10a35ce1-0186-448a-ffff12f46cd88b3d",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a35ce1-0185-445c-ffff2c2cef9352c0",
+                "down": "10a35ce1-0185-445d-ffff2c2cef9352c0",
+                "infoText": "10a35ce1-0185-4461-ffff2c2cef9352c0",
+                "mode": "10a35ce1-0185-445e-ffff2c2cef9352c0",
+                "learningStep": "10a35ce1-0185-445f-ffff2c2cef9352c0",
+                "hasEndposition": "10a35ce1-0185-4460-ffff2c2cef9352c0",
+                "position": "10a35ce1-0186-4482-ffff2c2cef9352c0",
+                "shadePosition": "10a35ce1-0186-4483-ffff2c2cef9352c0",
+                "safetyActive": "10a35ce1-0186-4488-ffff2c2cef9352c0",
+                "autoAllowed": "10a35ce1-0186-4469-ffff2c2cef9352c0",
+                "autoActive": "10a35ce1-0186-4487-ffff2c2cef9352c0",
+                "locked": "10a35ce1-0186-4489-ffff2c2cef9352c0"
+            }
+        },
+        "10a46e93-01b2-4b9c-ffff12f46cd88b3d": {
+            "name": "Rollo 04",
+            "type": "Jalousie",
+            "uuidAction": "10a46e93-01b2-4b9c-ffff12f46cd88b3d",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d95-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "isAutomatic": true,
+                "animation": 1,
+                "availableModes": "19,21,22"
+            },
+            "states": {
+                "up": "10a46e93-01b1-4b6e-ffff66ae8d3814d6",
+                "down": "10a46e93-01b1-4b6f-ffff66ae8d3814d6",
+                "infoText": "10a46e93-01b1-4b73-ffff66ae8d3814d6",
+                "mode": "10a46e93-01b1-4b70-ffff66ae8d3814d6",
+                "learningStep": "10a46e93-01b1-4b71-ffff66ae8d3814d6",
+                "hasEndposition": "10a46e93-01b1-4b72-ffff66ae8d3814d6",
+                "position": "10a46e93-01b2-4b94-ffff66ae8d3814d6",
+                "shadePosition": "10a46e93-01b2-4b95-ffff66ae8d3814d6",
+                "safetyActive": "10a46e93-01b2-4b9a-ffff66ae8d3814d6",
+                "autoAllowed": "10a46e93-01b2-4b7b-ffff66ae8d3814d6",
+                "autoActive": "10a46e93-01b2-4b99-ffff66ae8d3814d6",
+                "locked": "10a46e93-01b2-4b9b-ffff66ae8d3814d6"
+            }
+        },
+        "114d4954-0294-b947-ffff782fd5302758": {
+            "name": "Freigabe Wärmeelemente",
+            "type": "Radio",
+            "uuidAction": "114d4954-0294-b947-ffff782fd5302758",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d4954-0294-b961-ffff782fd5302758"
+            }
+        },
+        "114d4954-0294-b8e8-ffff782fd5302758": {
+            "name": "Intelligente Raumregelung",
+            "type": "IRoomController",
+            "uuidAction": "114d4954-0294-b8e8-ffff782fd5302758",
+            "room": "10a20e98-0285-0ee2-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 8,
+            "isFavorite": true,
+            "isSecured": false,
+            "details": {
+                "restrictedToMode": 0,
+                "temperatures": {
+                    "0": {
+                        "isAbsolute": false
+                    },
+                    "1": {
+                        "isAbsolute": true
+                    },
+                    "2": {
+                        "isAbsolute": true
+                    },
+                    "3": {
+                        "isAbsolute": true
+                    },
+                    "4": {
+                        "isAbsolute": true
+                    },
+                    "5": {
+                        "isAbsolute": false
+                    },
+                    "6": {
+                        "isAbsolute": false
+                    }
+                },
+                "format": "%.1f°"
+            },
+            "states": {
+                "tempTarget": "114d4954-0294-b913-ffff782fd5302758",
+                "tempActual": "114d4954-0294-b8ec-ffff782fd5302758",
+                "error": "114d4954-0294-b911-ffff782fd5302758",
+                "mode": "114d4954-0294-b90f-ffff782fd5302758",
+                "serviceMode": "114d4954-0294-b910-ffff782fd5302758",
+                "currHeatTempIx": "114d4b18-0000-cb26-ffffb8512bdf6a86",
+                "currCoolTempIx": "114d4b18-0000-cb27-ffffb8512bdf6a86",
+                "override": "114d4954-0294-b916-ffff782fd5302758",
+                "isPreparing": "114d4954-0294-b917-ffff782fd5302758",
+                "valveHeat": "114d4954-0294-b906-ffff782fd5302758",
+                "valveCool": "114d4954-0294-b90a-ffff782fd5302758",
+                "openWindow": "114d4954-0294-b8ee-ffff782fd5302758",
+                "stop": "114d4954-0294-b8f5-ffff782fd5302758",
+                "overrideTotal": "114d4954-0294-b98c-ffff782fd5302758",
+                "movement": "114d4954-0294-b98b-ffff782fd5302758",
+                "manualMode": "114d4954-0294-b98d-ffff782fd5302758",
+                "temperatures": [
+                    "114d4954-0294-b8f6-ffff782fd5302758",
+                    "114d4954-0294-b8f7-ffff782fd5302758",
+                    "114d4954-0294-b8f9-ffff782fd5302758",
+                    "114d4954-0294-b8fd-ffff782fd5302758",
+                    "114d4954-0294-b8fe-ffff782fd5302758",
+                    "114d4954-0294-b8fc-ffff782fd5302758",
+                    "114d4954-0294-b8fb-ffff782fd5302758"
+                ]
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Temperatur",
+                        "format": "%.1f°C",
+                        "uuid": "114d4954-0294-b8ec-ffff782fd5302758",
+                        "visuType": 0
+                    }
+                ]
+            },
+            "subControls": {
+                "114d4b18-0000-cb24-ffffb8512bdf6a86": {
+                    "name": "Heating",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4b18-0000-cb24-ffffb8512bdf6a86",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4b18-0000-cb24-ffffb8512bdf6a86",
+                        "mode": "114d4954-0294-b914-ffff782fd5302758",
+                        "modeList": "114d4954-0294-b989-ffff782fd5302758",
+                        "value": "114d4b18-0000-cb26-ffffb8512bdf6a86"
+                    }
+                },
+                "114d4b18-0000-cb25-ffffb8512bdf6a86": {
+                    "name": "Cooling",
+                    "type": "IRCDaytimer",
+                    "uuidAction": "114d4b18-0000-cb25-ffffb8512bdf6a86",
+                    "defaultRating": 0,
+                    "isFavorite": false,
+                    "isSecured": false,
+                    "details": {
+                        "analog": true,
+                        "format": "%.1f°"
+                    },
+                    "states": {
+                        "entriesAndDefaultValue": "114d4b18-0000-cb25-ffffb8512bdf6a86",
+                        "mode": "114d4954-0294-b915-ffff782fd5302758",
+                        "modeList": "114d4954-0294-b98a-ffff782fd5302758",
+                        "value": "114d4b18-0000-cb27-ffffb8512bdf6a86"
+                    }
+                }
+            }
+        },
+        "117b525f-018b-a2cd-ffff12f46cd88b3d": {
+            "name": "Energie Hausstrom",
+            "type": "Fronius",
+            "uuidAction": "117b525f-018b-a2cd-ffff12f46cd88b3d",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "states": {
+                "prodCurr": "117b525f-018b-a2af-fffff465181e1e92",
+                "prodCurrDay": "117b525f-018b-a2b0-fffff465181e1e92",
+                "prodCurrMonth": "117b525f-018b-a2b1-fffff465181e1e92",
+                "prodCurrYear": "117b525f-018b-a2b2-fffff465181e1e92",
+                "prodTotal": "117b525f-018b-a2b3-fffff465181e1e92",
+                "consCurr": "117b525f-018b-a2b4-fffff465181e1e92",
+                "consCurrDay": "117b525f-018b-a2b5-fffff465181e1e92",
+                "deliveryDay": "117b525f-018b-a2b9-fffff465181e1e92",
+                "earningsDay": "117b525f-018b-a2bd-fffff465181e1e92",
+                "earningsMonth": "117b525f-018b-a2be-fffff465181e1e92",
+                "earningsYear": "117b525f-018b-a2bf-fffff465181e1e92",
+                "earningsTotal": "117b525f-018b-a2c0-fffff465181e1e92",
+                "prodStatus": "117b525f-018b-a2c1-fffff465181e1e92",
+                "prodError": "117b525f-018b-a2c2-fffff465181e1e92",
+                "error": "117b525f-018b-a2c3-fffff465181e1e92",
+                "gridCurr": "117b525f-018b-a2c4-fffff465181e1e92",
+                "batteryCurr": "117b525f-018b-a2c5-fffff465181e1e92",
+                "stateOfCharge": "117b525f-018b-a2c6-fffff465181e1e92",
+                "priceDelivery": "117b525f-018b-a29c-fffff465181e1e92",
+                "priceConsumption": "117b525f-018b-a29d-fffff465181e1e92",
+                "co2Factor": "117b525f-018b-a29b-fffff465181e1e92",
+                "generatorType": "117b525f-018b-a29f-fffff465181e1e92",
+                "mode": "117b525f-018b-a2a0-fffff465181e1e92",
+                "online": "117b525f-018b-a29e-fffff465181e1e92"
+            },
+            "statistic": {
+                "frequency": 4,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Leistung Produktion",
+                        "format": "%.3f kW",
+                        "uuid": "117b525f-018b-a2af-fffff465181e1e92",
+                        "visuType": 0
+                    },
+                    {
+                        "id": 1,
+                        "name": "Leistung Verbrauch",
+                        "format": "%.3f kW",
+                        "uuid": "117b525f-018b-a2b4-fffff465181e1e92",
+                        "visuType": 0
+                    },
+                    {
+                        "id": 2,
+                        "name": "Leistung Energieversorger",
+                        "format": "%.3fkW",
+                        "uuid": "117b525f-018b-a2c4-fffff465181e1e92",
+                        "visuType": 0
+                    },
+                    {
+                        "id": 3,
+                        "name": "Leistung Batterie",
+                        "format": "%.3f",
+                        "uuid": "117b525f-018b-a2c5-fffff465181e1e92",
+                        "visuType": 0
+                    },
+                    {
+                        "id": 4,
+                        "name": "Ladestand Batterie",
+                        "format": "%.3f %%",
+                        "uuid": "117b525f-018b-a2c6-fffff465181e1e92",
+                        "visuType": 0
+                    },
+                    {
+                        "id": 5,
+                        "name": "Zähler Produktion",
+                        "format": "%.3f kWh",
+                        "uuid": "117b525f-018b-a2c8-fffff465181e1e92",
+                        "visuType": 2
+                    },
+                    {
+                        "id": 6,
+                        "name": "Zähler Verbrauch",
+                        "format": "%.3f kWh",
+                        "uuid": "117b525f-018b-a2c9-fffff465181e1e92",
+                        "visuType": 2
+                    },
+                    {
+                        "id": 7,
+                        "name": "Zähler Lieferung",
+                        "format": "%.3f kWh",
+                        "uuid": "117b525f-018b-a2ca-fffff465181e1e92",
+                        "visuType": 2
+                    },
+                    {
+                        "id": 8,
+                        "name": "Zähler Bezug",
+                        "format": "%.3f kWh",
+                        "uuid": "117b525f-018b-a2cb-fffff465181e1e92",
+                        "visuType": 2
+                    }
+                ]
+            }
+        },
+        "117b4ee9-0078-8fca-ffff12f46cd88b3d": {
+            "name": "Smart Socket 01",
+            "type": "Meter",
+            "uuidAction": "117b4ee9-0078-8fca-ffff12f46cd88b3d",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b4ee9-0078-8fbf-ffffb99039a74ef1",
+                "total": "117b4ee9-0078-8fbe-ffffb99039a74ef1"
+            }
+        },
+        "117b4f04-03a0-d1f7-ffff12f46cd88b3d": {
+            "name": "Smart Socket 01",
+            "type": "Switch",
+            "uuidAction": "117b4f04-03a0-d1f7-ffff12f46cd88b3d",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b4f04-03a0-d1f4-ffffbae50c0c5c6e"
+            }
+        },
+        "117b4f0f-01b3-f9cf-ffffae7dfde65e0c": {
+            "name": "Smart Socket 02",
+            "type": "Meter",
+            "uuidAction": "117b4f0f-01b3-f9cf-ffffae7dfde65e0c",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b4f0f-01b3-f9da-ffffae7dfde65e0c",
+                "total": "117b4f0f-01b3-f9d9-ffffae7dfde65e0c"
+            }
+        },
+        "117b4f0f-01b3-f9e5-ffffae7dfde65e0c": {
+            "name": "Smart Socket 02",
+            "type": "Switch",
+            "uuidAction": "117b4f0f-01b3-f9e5-ffffae7dfde65e0c",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b4f0f-01b3-f9eb-ffffae7dfde65e0c"
+            }
+        },
+        "117b4f6e-0160-7315-ffff3a5765800cbe": {
+            "name": "Smart Socket 03",
+            "type": "Meter",
+            "uuidAction": "117b4f6e-0160-7315-ffff3a5765800cbe",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b4f6e-0160-7320-ffff3a5765800cbe",
+                "total": "117b4f6e-0160-731f-ffff3a5765800cbe"
+            }
+        },
+        "117b4f6e-0160-732b-ffff3a5765800cbe": {
+            "name": "Smart Socket 03",
+            "type": "Switch",
+            "uuidAction": "117b4f6e-0160-732b-ffff3a5765800cbe",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b4f6e-0160-7331-ffff3a5765800cbe"
+            }
+        },
+        "117b4fe3-0062-916d-ffff5b9f258f903e": {
+            "name": "Smart Socket 04",
+            "type": "Meter",
+            "uuidAction": "117b4fe3-0062-916d-ffff5b9f258f903e",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b4fe3-0062-9178-ffff5b9f258f903e",
+                "total": "117b4fe3-0062-9177-ffff5b9f258f903e"
+            }
+        },
+        "117b4fe3-0062-9183-ffff5b9f258f903e": {
+            "name": "Smart Socket 04",
+            "type": "Switch",
+            "uuidAction": "117b4fe3-0062-9183-ffff5b9f258f903e",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b4fe3-0062-9189-ffff5b9f258f903e"
+            }
+        },
+        "117b4fe9-03ae-9f8e-ffff717c16872761": {
+            "name": "Smart Socket 05",
+            "type": "Meter",
+            "uuidAction": "117b4fe9-03ae-9f8e-ffff717c16872761",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b4fe9-03ae-9f99-ffff717c16872761",
+                "total": "117b4fe9-03ae-9f98-ffff717c16872761"
+            }
+        },
+        "117b5047-02ad-54ad-ffff1ab7fe42e0b5": {
+            "name": "Smart Socket 06",
+            "type": "Meter",
+            "uuidAction": "117b5047-02ad-54ad-ffff1ab7fe42e0b5",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "117b5047-02ad-54b8-ffff1ab7fe42e0b5",
+                "total": "117b5047-02ad-54b7-ffff1ab7fe42e0b5"
+            }
+        },
+        "117b5047-02ad-54c3-ffff1ab7fe42e0b5": {
+            "name": "Smart Socket 06",
+            "type": "Switch",
+            "uuidAction": "117b5047-02ad-54c3-ffff1ab7fe42e0b5",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-026f-0e2f-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "active": "117b5047-02ad-54c9-ffff1ab7fe42e0b5"
+            }
+        },
+        "114d485d-00ca-2ca5-ffff2fd41537cffc": {
+            "name": "Betriebsart",
+            "type": "Radio",
+            "uuidAction": "114d485d-00ca-2ca5-ffff2fd41537cffc",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": "00000000-0000-002e-2000000000000000",
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "EcoSommer",
+                    "2": "EcoWinter",
+                    "3": "Komfort",
+                    "4": "Ofenbetrieb"
+                }
+            },
+            "states": {
+                "activeOutput": "114d485d-00ca-2cbf-ffff2fd41537cffc"
+            }
+        },
+        "114d485d-00ca-2ce3-ffff2fd41537cffc": {
+            "name": "Fehleranzeige",
+            "type": "TextState",
+            "uuidAction": "114d485d-00ca-2ce3-ffff2fd41537cffc",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "textAndIcon": "114d485d-00ca-2ce3-ffff2fd41537cffc"
+            }
+        },
+        "114d485d-00ca-2cfe-ffff2fd41537cffc": {
+            "name": "Freigabe Kühlung",
+            "type": "Radio",
+            "uuidAction": "114d485d-00ca-2cfe-ffff2fd41537cffc",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "details": {
+                "allOff": "Aus",
+                "outputs": {
+                    "1": "Ein"
+                }
+            },
+            "states": {
+                "activeOutput": "114d485d-00ca-2d18-ffff2fd41537cffc"
+            }
+        },
+        "114d485d-00ca-2ceb-ffff2fd41537cffc": {
+            "name": "Gerätefilter",
+            "type": "TextState",
+            "uuidAction": "114d485d-00ca-2ceb-ffff2fd41537cffc",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 0,
+            "isFavorite": false,
+            "isSecured": false,
+            "defaultIcon": null,
+            "states": {
+                "textAndIcon": "114d485d-00ca-2ceb-ffff2fd41537cffc"
+            }
+        },
+        "114d485d-00ca-2ccd-ffff2fd41537cffc": {
+            "name": "Verbrauchszähler",
+            "type": "Meter",
+            "uuidAction": "114d485d-00ca-2ccd-ffff2fd41537cffc",
+            "room": "114d4814-00b2-2385-ffff12f46cd88b3d",
+            "cat": "10a20e98-025e-0d99-ffff12f46cd88b3d",
+            "defaultRating": 1,
+            "isFavorite": false,
+            "isSecured": false,
+            "details": {
+                "actualFormat": "%.3fkW",
+                "totalFormat": "%.1fkWh"
+            },
+            "states": {
+                "actual": "114d485d-00ca-2cd8-ffff2fd41537cffc",
+                "total": "114d485d-00ca-2cd7-ffff2fd41537cffc"
+            },
+            "statistic": {
+                "frequency": 6,
+                "outputs": [
+                    {
+                        "id": 0,
+                        "name": "Gesamtverbrauch",
+                        "format": "%.1fkWh",
+                        "uuid": "114d485d-00ca-2cd7-ffff2fd41537cffc",
+                        "visuType": 2
+                    },
+                    {
+                        "id": 1,
+                        "name": "Leistung",
+                        "format": "%.3fkW",
+                        "uuid": "114d485d-00ca-2cd8-ffff2fd41537cffc",
+                        "visuType": 0
+                    }
+                ]
+            }
+        }
+    },
+    "weatherServer": {
+        "states": {
+            "actual": "10a20ebe-01d1-0ff1-ffff12f46cd88b3d",
+            "forecast": "10a20ebe-01d1-0ff0-ffffb83d4db56685"
+        },
+        "format": {
+            "relativeHumidity": "%.0f%%",
+            "temperature": "%.1f°",
+            "windSpeed": "%.0fkm/h",
+            "precipitation": "%.1fl/m²/h",
+            "barometricPressure": "%.0fhPa"
+        },
+        "weatherTypeTexts": {
+            "1": "wolkenlos",
+            "2": "heiter",
+            "3": "wolkig",
+            "4": "stark bewölkt",
+            "5": "bedeckt",
+            "6": "Nebel",
+            "7": "Hochnebel",
+            "8": "nicht verwendet",
+            "9": "nicht verwendet",
+            "10": "leichter Regen",
+            "11": "Regen",
+            "12": "starker Regen",
+            "13": "Nieseln",
+            "14": "leichter gefrierender Regen",
+            "15": "starker gefrierender Regen",
+            "16": "leichter Regenschauer",
+            "17": "kräftiger Regenschauer",
+            "18": "Gewitter",
+            "19": "kräftiges Gewitter",
+            "20": "leichter Schneefall",
+            "21": "Schneefall",
+            "22": "starker Schneefall",
+            "23": "leichter Schneeschauer",
+            "24": "starker Schneeschauer",
+            "25": "leichter Schneeregen",
+            "26": "Schneeregen",
+            "27": "starker Schneeregen",
+            "28": "leichter Schneeregenschauer",
+            "29": "kräftiger Schneeregenschauer"
+        },
+        "weatherFieldTypes": {
+            "1": {
+                "id": 1,
+                "name": "Temperatur",
+                "analog": true,
+                "unit": "°C",
+                "format": "%.1f"
+            },
+            "2": {
+                "id": 2,
+                "name": "Taupunkt",
+                "analog": true,
+                "unit": "°C",
+                "format": "%.1f"
+            },
+            "3": {
+                "id": 3,
+                "name": "Rel.Luftfeuchte",
+                "analog": true,
+                "format": "%.0f%%"
+            },
+            "4": {
+                "id": 4,
+                "name": "Windgeschwindigkeit",
+                "analog": true,
+                "unit": "km/h",
+                "format": "%.0f"
+            },
+            "5": {
+                "id": 5,
+                "name": "Windrichtung",
+                "analog": true
+            },
+            "6": {
+                "id": 6,
+                "name": "Böen",
+                "analog": true
+            },
+            "7": {
+                "id": 7,
+                "name": "Strahlung Abs.",
+                "analog": true
+            },
+            "8": {
+                "id": 8,
+                "name": "Strahlung Rel.",
+                "analog": true
+            },
+            "9": {
+                "id": 9,
+                "name": "Niederschlag",
+                "analog": true,
+                "unit": "l/m²/h",
+                "format": "%.1f"
+            },
+            "10": {
+                "id": 10,
+                "name": "Wettertype",
+                "analog": true
+            },
+            "11": {
+                "id": 11,
+                "name": "Luftdruck",
+                "analog": true,
+                "unit": "hPa",
+                "format": "%.0f"
+            },
+            "26": {
+                "id": 26,
+                "name": "Gefühlte Temperatur",
+                "analog": true,
+                "unit": "°C",
+                "format": "%.1f"
+            },
+            "27": {
+                "id": 27,
+                "name": "Strahlung",
+                "analog": true
+            },
+            "28": {
+                "id": 28,
+                "name": "Niederschlagswahrscheinlichkeit",
+                "analog": true
+            },
+            "29": {
+                "id": 29,
+                "name": "Schneeanteil",
+                "analog": true
+            },
+            "30": {
+                "id": 30,
+                "name": "CAPE",
+                "analog": true
+            },
+            "31": {
+                "id": 31,
+                "name": "Niedrige Bewölkung",
+                "analog": true
+            },
+            "32": {
+                "id": 32,
+                "name": "Mittlere Bewölkung",
+                "analog": true
+            },
+            "33": {
+                "id": 33,
+                "name": "Hohe Bewölkung",
+                "analog": true
+            },
+            "34": {
+                "id": 34,
+                "name": "Sonnenschein",
+                "analog": false
+            }
+        }
+    },
+    "times": {
+        "266": {
+            "id": 266,
+            "name": "Tage seit 2009",
+            "analog": true
+        },
+        "267": {
+            "id": 267,
+            "name": "Jahr",
+            "analog": true
+        },
+        "268": {
+            "id": 268,
+            "name": "Monat",
+            "analog": true
+        },
+        "269": {
+            "id": 269,
+            "name": "Tag",
+            "analog": true
+        },
+        "270": {
+            "id": 270,
+            "name": "Wochentag",
+            "analog": true
+        },
+        "271": {
+            "id": 271,
+            "name": "Aktive Betriebszeit",
+            "analog": true
+        },
+        "272": {
+            "id": 272,
+            "name": "Minuten seit Mitternacht",
+            "analog": true
+        },
+        "273": {
+            "id": 273,
+            "name": "Stunde",
+            "analog": true
+        },
+        "274": {
+            "id": 274,
+            "name": "Minuten",
+            "analog": true
+        },
+        "275": {
+            "id": 275,
+            "name": "Sekunden",
+            "analog": true
+        },
+        "276": {
+            "id": 276,
+            "name": "Sekunden seit Boot",
+            "analog": true
+        },
+        "277": {
+            "id": 277,
+            "name": "Minuten bis Sonnenaufgang",
+            "analog": true
+        },
+        "278": {
+            "id": 278,
+            "name": "Minuten bis Sonnenuntergang",
+            "analog": true
+        },
+        "281": {
+            "id": 281,
+            "name": "Tageslicht",
+            "analog": false
+        },
+        "282": {
+            "id": 282,
+            "name": "Tageslicht 30Min",
+            "analog": false
+        },
+        "283": {
+            "id": 283,
+            "name": "Minuten bis Morgendämmerung",
+            "analog": true
+        },
+        "284": {
+            "id": 284,
+            "name": "Minuten bis Abenddämmerung",
+            "analog": true
+        },
+        "285": {
+            "id": 285,
+            "name": "Sonne Höhe",
+            "analog": true
+        },
+        "286": {
+            "id": 286,
+            "name": "Sonne Richtung",
+            "analog": true
+        },
+        "287": {
+            "id": 287,
+            "name": "Startimpuls",
+            "analog": false
+        },
+        "288": {
+            "id": 288,
+            "name": "Jahresimpuls",
+            "analog": false
+        },
+        "289": {
+            "id": 289,
+            "name": "Monatsimpuls",
+            "analog": false
+        },
+        "290": {
+            "id": 290,
+            "name": "Tagesimpuls",
+            "analog": false
+        },
+        "291": {
+            "id": 291,
+            "name": "Stundenimpuls",
+            "analog": false
+        },
+        "292": {
+            "id": 292,
+            "name": "Minutenimpuls",
+            "analog": false
+        },
+        "293": {
+            "id": 293,
+            "name": "Sekundenimpuls",
+            "analog": false
+        },
+        "294": {
+            "id": 294,
+            "name": "Impuls Sonnenaufgang",
+            "analog": false
+        },
+        "295": {
+            "id": 295,
+            "name": "Impuls Sonnenuntergang",
+            "analog": false
+        },
+        "298": {
+            "id": 298,
+            "name": "Impuls Morgendämmerung",
+            "analog": false
+        },
+        "299": {
+            "id": 299,
+            "name": "Impuls Abenddämmerung",
+            "analog": false
+        }
+    },
+    "autopilot": {
+        "10a20e98-025c-0d81-ffff12f46cd88b3d": {
+            "name": "Automatik-Regeln",
+            "uuidAction": "10a20e98-025c-0d81-ffff12f46cd88b3d",
+            "states": {
+                "changed": "10a20e98-025c-0d7d-ffff12f46cd88b3d",
+                "history": "10a20e98-025c-0d7e-ffff12f46cd88b3d"
+            }
+        }
+    }
+}

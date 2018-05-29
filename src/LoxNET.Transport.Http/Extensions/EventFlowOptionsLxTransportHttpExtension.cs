@@ -14,8 +14,7 @@ namespace LoxNET.Transport.Http.Extensions
         {
             return eventFlowOptions.RegisterServices(sr => 
             {
-                sr.Register<ILxHttpConnectionFactory, LxHttpConnectionFactory>(Lifetime.Singleton);
-                sr.Register<ILxHttpResultFactory, LxHttpResultFactory>(Lifetime.Singleton);
+                sr.Register<ILxHttpRequestFactory, LxHttpRequestFactory>(Lifetime.Singleton);
                 sr.Register(rc => configuration, Lifetime.Singleton);
             });
         }

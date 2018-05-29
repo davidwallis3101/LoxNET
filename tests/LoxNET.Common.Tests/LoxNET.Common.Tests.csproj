@@ -6,6 +6,7 @@
     <PackageReference Include="xunit" Version="2.4.0-beta.1.build3958"/>
     <PackageReference Include="xunit.runner.console" Version="2.4.0-beta.1.build3958"/>
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0-beta.1.build3958"/>
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.4.0-beta.1.build3958"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\LoxNET.Common\LoxNET.Common.csproj"/>

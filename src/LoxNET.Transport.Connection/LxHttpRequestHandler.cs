@@ -27,7 +27,10 @@ using System.Threading.Tasks;
 
 namespace LoxNET.Transport.Connection
 {
-    public class LxHttpRequestHandler : ILxHttpRequestHandler
+    public abstract class LxHttpRequestHandler<TRequest, TResult> : ILxHttpRequestHandler
+        where TRequest : ILxHttpRequest
+        where TResult : ILxHttpResult
     {
+        public abstract Task<TResult> ExecuteRequestAsync(TRequest request, CancellationToken token);    
     }
 }

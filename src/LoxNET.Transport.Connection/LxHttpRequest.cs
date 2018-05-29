@@ -63,7 +63,7 @@ namespace LoxNET.Transport.Connection
 
         public async Task<string> GetStringAsync(string path, CancellationToken token)
         {
-            using (var result = await _client.GetAsync(buildUri(path), token))
+            using (var result = await new HttpClient().GetAsync(buildUri(path), token))
             {
                 string content = await result.Content.ReadAsStringAsync();
                 return content;
@@ -72,7 +72,7 @@ namespace LoxNET.Transport.Connection
 
         private Uri buildUri(string path)
         {
-            UriBuilder builder = new UriBuilder(_uri);
+            UriBuilder builder = new UriBuilder(BaseUri);
             builder.Path = path;
             return builder.Uri;            
         }
