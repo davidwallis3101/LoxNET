@@ -8,7 +8,7 @@ namespace LoxNET.Serialization
     {
         public static ResultModel Deserialize(string json)
         {
-            var root = JObject.Parse(json).SelectToken("LL").ToString();
+            var root = JObject.Parse(json).SelectToken("LL").ToString().Replace("\r\n","");
             return JsonConvert.DeserializeObject<ResultModel>(root);
         }
     }

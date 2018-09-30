@@ -21,10 +21,10 @@ namespace LoxNET.Configuration
             if (settings.MiniServerOptionsCount == 0)
             {
                 var ep = new LxEndpointOptions();
-                ep.HostName = "testminiserver.loxone.com";
-                ep.Port = 7777;
-                ep.UserName = "web";
-                ep.Password = "web";
+                ep.HostName = "192.168.0.77";
+                ep.Port = 80;
+                ep.UserName = "admin";
+                ep.Password = "P@55w0rd";
                 settings.RegisterLxEndpoint(ep);
             }
 
