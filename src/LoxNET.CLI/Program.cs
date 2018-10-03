@@ -105,7 +105,7 @@ namespace LoxNET.CLI
             {
                 CancellationToken token = new CancellationToken();
                 var user = "admin";
-                var password = "P@55w0rd";
+                var password = "Pass";
                 /*
                 ● Acquire both the “key” & “salt” at once using “jdev/sys/getkey2/{user}”
                     ○ {user} is the username for whom to acquire the token.
@@ -196,11 +196,53 @@ namespace LoxNET.CLI
                 //string tokenRequestResult = request
                 //    .GetStringAsync($"jdev/sys/gettoken/{hash}/{user}/{webPermission}/{uuid}/{info}", token).Result;
 
-                var sendString = $"jdev/sys/gettoken/{hash}/{user}/{webPermission}/{uuid}/{info}";
-                Console.WriteLine("Send String: " + sendString);
 
-                string tokenRequestResult = request.GetStringAsync(sendString, token).Result;
+                var aes = new AesCryptoServiceProvider
+                {
+                    Mode = CipherMode.CBC,
+                    Padding = PaddingMode.Zeros
+                    // BlockSize = 128,
+                    // KeySize = 256,
+
+                };
+                // IV should be 16Byte ie 128
+                aes.GenerateIV();
+                byte[] iv = aes.IV;
+                aes.GenerateKey();
+
+                Console.WriteLine("Key base64: {0}", Convert.ToBase64String(aes.Key));
+                Console.WriteLine("IV base64: {0}", Convert.ToBase64String(iv));
+
+                // End Aes
+
+                var command = $"jdev/sys/gettoken/{hash}/{user}/{webPermission}/{uuid}/{info}";
+
+
+
+
+
+
+
+
+                var salt_part = "salt/" + salt;
+
+                //if (this._is_new_salt_needed())
+                //{
+                //    salt_part = 'nextSalt/' + (this._current_salt) + '/';
+                //    this._current_salt = this._get_salt();
+                //    salt_part += (this._current_salt);
+                //}
+                var enc_part = cipher(aes, salt_part + '/' + command);
+                Console.WriteLine($"enc_part: {enc_part}");
+                //var enc_cmd = "jdev/sys/enc/" + System.Net.WebUtility.UrlEncode(enc_part);
+                //Console.WriteLine($"enc_cmd: {enc_cmd}");
+
+                string tokenRequestResult = request.GetStringAsync(enc_part, token).Result;
                 Console.WriteLine(tokenRequestResult);
+
+
+                //string tokenRequestResult = request.GetStringAsync(sendString, token).Result;
+                //Console.WriteLine(tokenRequestResult);
 
                 /*
                 ● Store the response, it contains info on the lifespan, the permissions granted with that token and the token ID itself.
@@ -217,6 +259,7 @@ namespace LoxNET.CLI
 
         }
         // https://stackoverflow.com/questions/36763381/how-to-convert-hex-string-to-normal-text-string-c-sharp
+
         public static byte[] StringToByteArray(String hex)
         {
             int NumberChars = hex.Length;
@@ -226,6 +269,24 @@ namespace LoxNET.CLI
             return bytes;
         }
 
+
+        private static string cipher(AesCryptoServiceProvider aes, string text)
+        {
+            if (!text.EndsWith("\0")) text += "\0";
+            // https://stackoverflow.com/questions/28613831/encrypt-decrypt-querystring-values-using-aes-256
+
+            // Convert string to byte array
+            byte[] src = Encoding.Unicode.GetBytes(text);
+
+            // encryption
+            using (ICryptoTransform encrypt = aes.CreateEncryptor())
+            {
+                byte[] dest = encrypt.TransformFinalBlock(src, 0, src.Length);
+
+                // Convert byte array to Base64 strings
+                return "jdev/sys/enc/" + Convert.ToBase64String(dest);
+            }
+        }
 
         /// <summary>
         /// Helper that generates a random key on each call.
